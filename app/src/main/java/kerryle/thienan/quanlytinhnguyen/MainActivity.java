@@ -1,8 +1,8 @@
 package kerryle.thienan.quanlytinhnguyen;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.adapter.DangNhapAdapter;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.DangNhap;
 
-public class MainActivity extends Activity {
+public class MainActivity extends AppCompatActivity {
 
     EditText txtTenDangNhap , txtMatKhau;
     Button btnDangNhap , btnDangKy;
