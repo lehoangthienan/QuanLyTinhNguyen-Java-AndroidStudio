@@ -30,7 +30,7 @@ public class MainActivity extends Activity {
     EditText txtTenDangNhap , txtMatKhau;
     Button btnDangNhap , btnDangKy;
 
-    TextView txtTk , txtMk ;
+    TextView txtTk , txtMk;
 
     String TenDangNhap , MatKhau ;
 

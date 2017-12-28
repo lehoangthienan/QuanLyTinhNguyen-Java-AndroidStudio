@@ -37,8 +37,8 @@ public class DangKyActivity extends AppCompatActivity {
     SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
     SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd");
 
-    String url1 = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/quanlytinhnguyen/insertdangky.php";
-    String url2 = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/quanlytinhnguyen/insertsinhvien.php";
+    String url1 = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/insertdangky.php";
+    String url2 = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/insertsinhvien.php";
 
     boolean check = false;
     String NgaySinh;
@@ -129,7 +129,7 @@ public class DangKyActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(DangKyActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(DangKyActivity.this, error.toString(),Toast.LENGTH_LONG).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }
