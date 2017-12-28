@@ -21,68 +21,72 @@
         android:id="@+id/txtNgayKT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/txtNgayBD"
-        android:layout_below="@+id/txtNgayBD"
         android:hint="Ngày Kết Thúc"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/txtNgayBD"
+        android:layout_alignStart="@+id/txtNgayBD" />
 
     <TextView
         android:id="@+id/txtNgayBD"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/txtTenTinhNguyen"
-        android:layout_marginStart="27dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:hint="Ngày Bắt Đầu"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/txtTenTinhNguyen"
+        android:layout_alignStart="@+id/txtTenTinhNguyen" />
 
     <TextView
         android:id="@+id/txtSLConLai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/txtSLThamGia"
-        android:layout_below="@+id/txtSLThamGia"
         android:hint="Số Lượng Còn Lại"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/txtSLThamGia"
+        android:layout_alignStart="@+id/txtSLThamGia" />
 
     <TextView
         android:id="@+id/txtSLThamGia"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/txtNgayKT"
-        android:layout_below="@+id/txtNgayKT"
         android:hint="Số Lường Sinh Viên Tham Gia"
-        android:textColor="@android:color/background_dark" />
+        android:textColor="@android:color/background_dark"
+        android:layout_below="@+id/txtNgayKT"
+        android:layout_alignStart="@+id/txtNgayKT" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnDangKyNhanh"
+        android:background="@drawable/drawoimagebutton"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
-        android:text="Đăng Kí Nhanh"
-        android:textColor="@android:color/holo_red_light"
-        android:textSize="10sp"
-        android:layout_marginEnd="20dp"
-        android:layout_alignTop="@+id/txtNgayBD"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/electricity"
+        android:layout_below="@+id/txtTenTinhNguyen"
         android:layout_alignEnd="@+id/txtTenTinhNguyen" />
 
-    <Button
+    <ImageButton
         android:id="@+id/btnChiTiet"
-        android:layout_width="70dp"
-        android:layout_height="40dp"
-        android:text="Chi Tiết"
-        android:textColor="@android:color/holo_blue_bright"
-        android:textSize="8sp"
-        android:layout_below="@+id/btnDangKyNhanh"
-        android:layout_alignEnd="@+id/btnDangKyNhanh"
-        android:layout_marginEnd="15dp" />
+        android:background="@drawable/drawoimagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/question"
+        android:layout_below="@+id/txtSLThamGia"
+        android:layout_alignStart="@+id/btnDangKyNhanh" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="wrap_content"
+        android:layout_width="500dp"
         android:layout_height="1dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
+        android:layout_marginTop="11dp"
         android:background="@android:color/holo_red_dark"
-        android:layout_below="@+id/btnChiTiet" />
+        android:layout_below="@+id/btnChiTiet"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/txtTenTruongDaiHoc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/txtSLConLai"
+        android:layout_below="@+id/txtSLConLai"
+        android:hint="Mã Trường"
+        android:textColor="@android:color/background_dark" />
 </RelativeLayout>

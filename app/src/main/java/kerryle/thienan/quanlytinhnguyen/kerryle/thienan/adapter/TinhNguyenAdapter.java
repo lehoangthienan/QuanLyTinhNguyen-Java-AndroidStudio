@@ -14,9 +14,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.Button;
 import android.widget.Filter;
 import android.widget.Filterable;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -47,7 +47,6 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.SoLuongThamGia;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.TinhNguyen;
 
 import static kerryle.thienan.quanlytinhnguyen.ControlTinhNguyenActivity.maSinhVien;
-import static kerryle.thienan.quanlytinhnguyen.R.id.btnChiTiet;
 import static kerryle.thienan.quanlytinhnguyen.R.id.btnDangKyNhanh;
 
 /**
@@ -84,8 +83,8 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
     }
 
     private  class ViewHolder{
-        TextView txtTenTinhNguyen ,txtSLThamGia ,txtNgayBD , txtNgayKT ,txtSLConLai  ;
-        Button btnChiTiet, btnDangKyNhanh;
+        TextView txtTenTinhNguyen ,txtSLThamGia ,txtNgayBD , txtNgayKT ,txtSLConLai , txtTenTruongDaiHoc  ;
+        ImageButton btnChiTiet, btnDangKyNhanh;
 
     }
 
@@ -120,8 +119,9 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             holder.txtNgayKT = (TextView) view.findViewById(R.id.txtNgayKT);
             holder.txtSLConLai = (TextView) view.findViewById(R.id.txtSLConLai);
             holder.txtSLThamGia = (TextView) view.findViewById(R.id.txtSLThamGia);
-            holder.btnChiTiet =(Button) view.findViewById(btnChiTiet);
-            holder.btnDangKyNhanh =(Button) view.findViewById(btnDangKyNhanh);
+            holder.btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
+            holder.btnDangKyNhanh =(ImageButton) view.findViewById(btnDangKyNhanh);
+            holder.txtTenTruongDaiHoc =(TextView) view.findViewById(R.id.txtTenTruongDaiHoc);
 
             urlGetMa= "http://quanlyhoatdongtinhnguyen.000webhostapp.com/gettinhnguyensinhvien.php?MASV="+maSinhVien;
             getMaTinhNguyen(urlGetMa);
@@ -141,6 +141,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
         holder.txtNgayKT.setText("Ngày Kết Thúc : " +tinhNguyen.getNgayGioKetThuc().toString());
         holder.txtSLThamGia.setText("Số Lượng Tham Gia : " + SoLuongThamGia);
         holder.txtSLConLai.setText("Số Lượng Còn Lại : " +(tinhNguyen.getSLMax()-tinhNguyen.getSLThamGia()));
+        holder.txtTenTruongDaiHoc.setText("Thuộc : " + tinhNguyen.getMAT().toString());
 
         for(MaTinhNguyenSinhVien maTinhNguyen :dsMaTinhNguyen)
         {
@@ -158,7 +159,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
 //                }
 //            }
         }
-        Button btnChiTiet =(Button) view.findViewById(R.id.btnChiTiet);
+        ImageButton btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
         btnChiTiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -168,7 +169,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             }
         });
 
-       final Button btnDKNhanh =(Button) view.findViewById(btnDangKyNhanh);
+       final ImageButton btnDKNhanh =(ImageButton) view.findViewById(btnDangKyNhanh);
         btnDKNhanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -88,6 +88,7 @@
 
     <ImageButton
         android:id="@+id/btnHuyDangKyHDDK"
+        android:background="@drawable/drawoimagebutton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/delete3"
