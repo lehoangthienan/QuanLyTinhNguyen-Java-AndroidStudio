@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="kerryle.thienan.quanlytinhnguyen.XuLyUpdateActivity">
+
+    <ScrollView
+        android:layout_width="368dp"
+        android:layout_height="495dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView62"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Sửa Hoạt Động Tình Nguyện"
+                android:textAlignment="center"
+                android:textColor="@android:color/holo_blue_dark"
+                android:textSize="24sp"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/textView71"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Tên Tình Nguyện : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtTenTNUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Tên Tình Nguyện"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView61"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nội Dung Tình Nguyện : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtNoiDungTNUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Nội Dung"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView63"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số Điện Thoại Liên Hệ : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtSDTUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Số Điện Thoại Liên Hệ"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView72"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Địa Điểm : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtDiaDiemUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Địa Điểm"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView66"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ngày Bắt Đầu : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnNgayBDUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/calendar" />
+
+            <TextView
+                android:id="@+id/txtNgayBDUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hiện Thị Ngày Bắt Đầu"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView65"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Ngày Kết Thúc ; "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <ImageButton
+                android:id="@+id/btnNgayKTUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/calendar" />
+
+            <TextView
+                android:id="@+id/txtNgayKTUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Hiển Thị Ngày Kết Thúc"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView60"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số Lượng Tối Đa : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtSLMaxUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Số Lượng Tối Đa"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView70"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số Lượng Tối Thiểu : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtSLMinUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Số Lượng Tối Thiểu"
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView69"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mã Trường Đại Học : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtMaTruongUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Mã Trường ( Ex : UIT , UEL ...)"
+                android:inputType="textPersonName" />
+
+            <TextView
+                android:id="@+id/textView58"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Số Lượng Tham Gia ( Đã Có Sẵn ) :"
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtSLThamGiaUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Số Lượng Tham Gia "
+                android:inputType="numberDecimal" />
+
+            <TextView
+                android:id="@+id/textView64"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Linh Hình Ảnh : "
+                android:textColor="@android:color/background_light"
+                android:textStyle="bold" />
+
+            <EditText
+                android:id="@+id/txtLinkAnhUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nhập Link Hình Ảnh "
+                android:inputType="textPersonName" />
+
+            <ImageButton
+                android:id="@+id/btnCapNhapUpdate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/capnhap" />
+        </LinearLayout>
+    </ScrollView>
+</android.support.constraint.ConstraintLayout>
