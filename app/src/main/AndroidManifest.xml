@@ -58,10 +58,16 @@
         <activity
             android:name=".DanhSachSinhVienThamGiaActivity"
             android:theme="@style/ThemeDanhSachSinhVien" />
-        <activity android:name=".DanhSachTruongActivity"
-            android:theme="@style/ThemeAdmin"/>
-        <activity android:name=".ThongTinUngDungActivity"
-            android:theme="@style/ThemeAdmin" ></activity>
+        <activity
+            android:name=".DanhSachTruongActivity"
+            android:theme="@style/ThemeAdmin" />
+        <activity
+            android:name=".ThongTinUngDungActivity"
+            android:theme="@style/ThemeAdmin" />
+        <activity android:name=".XyLyXemTinhNguyenTruongActivity"
+            android:theme="@style/ThemeDanhSachSinhVien">
+
+        </activity>
     </application>
 
 </manifest>

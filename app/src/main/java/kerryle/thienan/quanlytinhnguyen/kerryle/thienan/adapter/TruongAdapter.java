@@ -2,6 +2,7 @@ package kerryle.thienan.quanlytinhnguyen.kerryle.thienan.adapter;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
@@ -14,6 +15,7 @@ import android.widget.TextView;
 import java.util.List;
 
 import kerryle.thienan.quanlytinhnguyen.R;
+import kerryle.thienan.quanlytinhnguyen.XyLyXemTinhNguyenTruongActivity;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.Truong;
 
 /**
@@ -74,7 +76,20 @@ public class TruongAdapter extends BaseAdapter {
         holder.txtMTDST.setText("Mã Trường : "+ds.getMAT().toString());
         holder.txtTenDST.setText("Tên Trường : " +ds.getTenTruog().toString());
 
+        holder.btnDST.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String MAT = ds.getMAT().toString();
+                xuLyMoDanhSachTinhNguyen(MAT);
+            }
+        });
         return view;
 
+    }
+
+    private void xuLyMoDanhSachTinhNguyen(String mat) {
+        Intent i = new Intent(context, XyLyXemTinhNguyenTruongActivity.class);
+        i.putExtra("MAT" , mat);
+        context.startActivity(i);
     }
 }
