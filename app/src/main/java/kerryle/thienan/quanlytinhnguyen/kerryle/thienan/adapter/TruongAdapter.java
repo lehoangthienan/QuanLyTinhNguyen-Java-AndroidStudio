@@ -71,8 +71,8 @@ public class TruongAdapter extends BaseAdapter {
         }
         final Truong ds = this.objects.get(position);
 
-        holder.txtMTDST.setText("Mã Sinh Viên : "+ds.getMAT().toString());
-        holder.txtTenDST.setText("Tên Sinh Viên : " +ds.getTenTruog().toString());
+        holder.txtMTDST.setText("Mã Trường : "+ds.getMAT().toString());
+        holder.txtTenDST.setText("Tên Trường : " +ds.getTenTruog().toString());
 
         return view;
 
