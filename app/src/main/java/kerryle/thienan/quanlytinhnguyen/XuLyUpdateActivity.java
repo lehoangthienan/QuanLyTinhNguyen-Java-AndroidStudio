@@ -118,7 +118,7 @@ public class XuLyUpdateActivity extends AppCompatActivity {
                 ngayKetThuc.isEmpty()
                 )
         {
-            Toast.makeText(XuLyUpdateActivity.this, "Bạn Vui Lòng Nhập Đầy Đủ Thông Tin !",Toast.LENGTH_LONG).show();
+            Toast.makeText(XuLyUpdateActivity.this, "Bạn Vui Lòng Nhập Đầy Đủ Thông Tin !",Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -135,18 +135,18 @@ public class XuLyUpdateActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         if(response.trim().equals("succes"))
                         {
-                            Toast.makeText(XuLyUpdateActivity.this, "Cập Nhập Hoạt Động Tình Nguyện Thành Công !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(XuLyUpdateActivity.this, "Cập Nhập Hoạt Động Tình Nguyện Thành Công !",Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
-                            Toast.makeText(XuLyUpdateActivity.this, "Cập Nhập Hoạt Động Tình Nguyện Thất Bại !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(XuLyUpdateActivity.this, "Cập Nhập Hoạt Động Tình Nguyện Thất Bại !",Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(XuLyUpdateActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(XuLyUpdateActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }

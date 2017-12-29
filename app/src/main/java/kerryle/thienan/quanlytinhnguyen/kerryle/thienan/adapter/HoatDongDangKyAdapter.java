@@ -205,12 +205,12 @@ public class HoatDongDangKyAdapter extends BaseAdapter {
                     public void onResponse(String response) {
                         if(response.trim().equals("succes"))
                         {
-                            Toast.makeText(context, "Hũy Đăng Kí Thành Công !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "Hũy Đăng Kí Thành Công !",Toast.LENGTH_SHORT).show();
                             checkHuyDangKy = true;
                         }
                         else
                         {
-                            Toast.makeText(context, "Hũy Đăng Kí Thất Bại !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "Hũy Đăng Kí Thất Bại !",Toast.LENGTH_SHORT).show();
                             checkHuyDangKy = false;
                         }
                     }
@@ -218,7 +218,7 @@ public class HoatDongDangKyAdapter extends BaseAdapter {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }

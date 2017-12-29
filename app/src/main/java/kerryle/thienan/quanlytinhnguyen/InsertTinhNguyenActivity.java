@@ -101,7 +101,7 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
                 ngayKetThuc.isEmpty()
                 )
         {
-            Toast.makeText(InsertTinhNguyenActivity.this, "Bạn Vui Lòng Nhập Đầy Đủ Thông Tin !",Toast.LENGTH_LONG).show();
+            Toast.makeText(InsertTinhNguyenActivity.this, "Bạn Vui Lòng Nhập Đầy Đủ Thông Tin !",Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -118,7 +118,7 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         if(response.trim().equals("succes"))
                         {
-                            Toast.makeText(InsertTinhNguyenActivity.this, "Thêm Hoạt Động Tình Nguyện Thành Công !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(InsertTinhNguyenActivity.this, "Thêm Hoạt Động Tình Nguyện Thành Công !",Toast.LENGTH_SHORT).show();
                             txtMaTNInsert.setText("");
                             txtTenTNInsert.setText("");
                             txtNoiDungInsert.setText("");
@@ -135,14 +135,14 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
                         }
                         else
                         {
-                            Toast.makeText(InsertTinhNguyenActivity.this, "Thêm Hoạt Động Tình Nguyện Thất Bại !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(InsertTinhNguyenActivity.this, "Thêm Hoạt Động Tình Nguyện Thất Bại !",Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(InsertTinhNguyenActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(InsertTinhNguyenActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }

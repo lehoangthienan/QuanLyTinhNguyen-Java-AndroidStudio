@@ -177,19 +177,19 @@ public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         if(response.trim().equals("succes"))
                         {
-                                Toast.makeText(ChinhSuaThongTinCaNhanActivity.this, "Cập Nhập Thông Tin Thành Công !",Toast.LENGTH_LONG).show();
+                                Toast.makeText(ChinhSuaThongTinCaNhanActivity.this, "Cập Nhập Thông Tin Thành Công !",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(ChinhSuaThongTinCaNhanActivity.this, MainActivity.class));
                         }
                         else
                         {
-                            Toast.makeText(ChinhSuaThongTinCaNhanActivity.this, "Cập Nhập Thông Tin Thất Bại !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(ChinhSuaThongTinCaNhanActivity.this, "Cập Nhập Thông Tin Thất Bại !",Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChinhSuaThongTinCaNhanActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ChinhSuaThongTinCaNhanActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }

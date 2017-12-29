@@ -66,7 +66,7 @@ public class DangKyActivity extends AppCompatActivity {
                 String MaSinhVien =txtMaSinhVien.getText().toString().trim();
                 if(Hoten.isEmpty()||TenTruong.isEmpty()||TenDangNhap.isEmpty()||MatKhau.isEmpty()||MaSinhVien.isEmpty())
                 {
-                    Toast.makeText(DangKyActivity.this, "Bạn Vui Lòng Nhập Đầy Đủ Thông Tin !",Toast.LENGTH_LONG).show();
+                    Toast.makeText(DangKyActivity.this, "Bạn Vui Lòng Nhập Đầy Đủ Thông Tin !",Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
@@ -163,24 +163,24 @@ public class DangKyActivity extends AppCompatActivity {
                         {
                             if(check == true)
                             {
-                                Toast.makeText(DangKyActivity.this, "Đăng Kí Thành Công !",Toast.LENGTH_LONG).show();
+                                Toast.makeText(DangKyActivity.this, "Đăng Kí Thành Công !",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(DangKyActivity.this , MainActivity.class));
                             }
                           else
                             {
-                                Toast.makeText(DangKyActivity.this, "Lỗi Đăng Ký 1.1 !",Toast.LENGTH_LONG).show();
+                                Toast.makeText(DangKyActivity.this, "Lỗi Đăng Ký 1.1 !",Toast.LENGTH_SHORT).show();
                             }
                         }
                         else
                         {
-                            Toast.makeText(DangKyActivity.this, "Lỗi Đăng Ký 1.2 !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(DangKyActivity.this, "Lỗi Đăng Ký 1.2 !",Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(DangKyActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(DangKyActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }

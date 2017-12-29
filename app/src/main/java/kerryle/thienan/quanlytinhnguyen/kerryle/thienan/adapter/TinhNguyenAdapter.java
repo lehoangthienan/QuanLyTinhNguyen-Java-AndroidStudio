@@ -40,6 +40,7 @@ import java.util.List;
 import java.util.Map;
 
 import kerryle.thienan.quanlytinhnguyen.ChiTietHoatDongActivity;
+import kerryle.thienan.quanlytinhnguyen.DanhSachSinhVienThamGiaActivity;
 import kerryle.thienan.quanlytinhnguyen.R;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.MaTinhNguyenSinhVien;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.SoLuongSinhVienToiDa;
@@ -84,7 +85,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
 
     private  class ViewHolder{
         TextView txtTenTinhNguyen ,txtSLThamGia ,txtNgayBD , txtNgayKT ,txtSLConLai , txtTenTruongDaiHoc  ;
-        ImageButton btnChiTiet, btnDangKyNhanh;
+        ImageButton btnChiTiet, btnDangKyNhanh ,btnDanhSachSinhVienTham ;
 
     }
 
@@ -122,6 +123,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             holder.btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
             holder.btnDangKyNhanh =(ImageButton) view.findViewById(btnDangKyNhanh);
             holder.txtTenTruongDaiHoc =(TextView) view.findViewById(R.id.txtTenTruongDaiHoc);
+            holder.btnDanhSachSinhVienTham =(ImageButton) view.findViewById(R.id.btnDanhSachSinhVienTham);
 
             urlGetMa= "http://quanlyhoatdongtinhnguyen.000webhostapp.com/gettinhnguyensinhvien.php?MASV="+maSinhVien;
             getMaTinhNguyen(urlGetMa);
@@ -186,9 +188,25 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             }
         });
 
+        ImageButton btnDanhSachSinhVienTham =(ImageButton) view.findViewById(R.id.btnDanhSachSinhVienTham);
+        btnDanhSachSinhVienTham.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MATN = tinhNguyen.getMATN().toString();
+                maTinhNguyen = MATN;
+                xuLyMoDanhSachSinhVien(maTinhNguyen);
+            }
+        });
+
         return view;
 
 
+    }
+
+    private void xuLyMoDanhSachSinhVien(String maTinhNguyen) {
+        Intent i = new Intent(context, DanhSachSinhVienThamGiaActivity.class);
+        i.putExtra("MATN" , maTinhNguyen);
+        context.startActivity(i);
     }
 
     private void updateSoLuongThamGiaTang(String url5, final String url4, final String url3) {
@@ -219,7 +237,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
                                                             soLuongMax = slMax.getSLMax();
                                                             if(soLuongThamGia >= soLuongMax)
                                                             {
-                                                                Toast.makeText(context, "Rất Tiếc ! Hoạt Động Tình Nguyện Này Đã Đủ Số Lượng !", Toast.LENGTH_LONG).show();
+                                                                Toast.makeText(context, "Rất Tiếc ! Hoạt Động Tình Nguyện Này Đã Đủ Số Lượng !", Toast.LENGTH_SHORT).show();
 
                                                             }
                                                             else
@@ -270,7 +288,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }
@@ -328,18 +346,18 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
                     public void onResponse(String response) {
                         if(response.trim().equals("succes"))
                         {
-                                Toast.makeText(context, "Đăng Kí Tham Gia Thành Công !",Toast.LENGTH_LONG).show();
+                                Toast.makeText(context, "Đăng Kí Tham Gia Thành Công !",Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
-                            Toast.makeText(context, "Đăng Kí Tham Gia Thất Bại !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(context, "Đăng Kí Tham Gia Thất Bại !",Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(context, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(context, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }

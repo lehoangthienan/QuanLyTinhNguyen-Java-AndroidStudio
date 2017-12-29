@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity {
 
         if(TenDangNhap.isEmpty()||MatKhau.isEmpty())
         {
-            Toast.makeText(MainActivity.this, "Bạn Vui Lòng Nhập Đầy Đủ Thông Tin !",Toast.LENGTH_LONG).show();
+            Toast.makeText(MainActivity.this, "Bạn Vui Lòng Nhập Đầy Đủ Thông Tin !",Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -122,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if(checkNhapSai== false)
                 {
-                    Toast.makeText(MainActivity.this, "Bạn Nhập Sai Tài Khoản Hoặc Mật Khẩu", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MainActivity.this, "Bạn Nhập Sai Tài Khoản Hoặc Mật Khẩu", Toast.LENGTH_SHORT).show();
                 }
             }
         }

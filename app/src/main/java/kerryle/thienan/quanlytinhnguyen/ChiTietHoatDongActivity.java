@@ -123,7 +123,7 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }
@@ -158,7 +158,7 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }
@@ -184,18 +184,18 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
                         if(response.trim().equals("succes"))
                         {
 
-                                Toast.makeText(ChiTietHoatDongActivity.this, "Hũy Đăng Kí Thành Công !",Toast.LENGTH_LONG).show();
+                                Toast.makeText(ChiTietHoatDongActivity.this, "Hũy Đăng Kí Thành Công !",Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
-                            Toast.makeText(ChiTietHoatDongActivity.this, "Hũy Đăng Kí Thất Bại !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(ChiTietHoatDongActivity.this, "Hũy Đăng Kí Thất Bại !",Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }
@@ -221,18 +221,18 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
                     public void onResponse(String response) {
                         if(response.trim().equals("succes"))
                         {
-                                Toast.makeText(ChiTietHoatDongActivity.this, "Đăng Kí Tham Gia Thành Công !",Toast.LENGTH_LONG).show();
+                                Toast.makeText(ChiTietHoatDongActivity.this, "Đăng Kí Tham Gia Thành Công !",Toast.LENGTH_SHORT).show();
                         }
                         else
                         {
-                            Toast.makeText(ChiTietHoatDongActivity.this, "Đăng Kí Tham Gia Thất Bại !",Toast.LENGTH_LONG).show();
+                            Toast.makeText(ChiTietHoatDongActivity.this, "Đăng Kí Tham Gia Thất Bại !",Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                         Log.d("AAA" , "ERROR!\n"+error.toString());
                     }
                 }

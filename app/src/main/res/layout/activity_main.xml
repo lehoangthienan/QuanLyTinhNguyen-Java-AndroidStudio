@@ -97,6 +97,7 @@
         android:id="@+id/txtTenTK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="389dp" />
 
@@ -104,6 +105,7 @@
         android:id="@+id/txtMK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="415dp" />
 
@@ -111,6 +113,7 @@
         android:id="@+id/txtMASVDN"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:visibility="invisible"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="352dp" />
 

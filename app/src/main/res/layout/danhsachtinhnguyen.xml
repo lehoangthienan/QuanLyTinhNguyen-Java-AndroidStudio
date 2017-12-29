@@ -60,8 +60,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/electricity"
-        android:layout_below="@+id/txtTenTinhNguyen"
-        android:layout_alignEnd="@+id/txtTenTinhNguyen" />
+        android:layout_marginEnd="12dp"
+        android:layout_below="@+id/txtTenTruongDaiHoc"
+        android:layout_toStartOf="@+id/btnChiTiet"
+        android:layout_marginTop="5dp" />
 
     <ImageButton
         android:id="@+id/btnChiTiet"
@@ -69,17 +71,17 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/question"
-        android:layout_below="@+id/txtSLThamGia"
-        android:layout_alignStart="@+id/btnDangKyNhanh" />
+        android:layout_alignTop="@+id/btnDangKyNhanh"
+        android:layout_toEndOf="@+id/txtSLThamGia" />
 
     <TextView
         android:id="@+id/textView20"
-        android:layout_width="500dp"
+        android:layout_width="600dp"
         android:layout_height="1dp"
-        android:layout_marginTop="11dp"
-        android:background="@android:color/holo_red_dark"
-        android:layout_below="@+id/btnChiTiet"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/btnDanhSachSinhVienTham"
+        android:layout_marginTop="4dp"
+        android:background="@android:color/holo_red_dark" />
 
     <TextView
         android:id="@+id/txtTenTruongDaiHoc"
@@ -89,4 +91,14 @@
         android:layout_below="@+id/txtSLConLai"
         android:hint="Mã Trường"
         android:textColor="@android:color/background_dark" />
+
+    <ImageButton
+        android:id="@+id/btnDanhSachSinhVienTham"
+        android:background="@drawable/drawoimagebutton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/teamwork"
+        android:layout_marginTop="5dp"
+        android:layout_below="@+id/btnDangKyNhanh"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

@@ -66,7 +66,7 @@ public class ThayDoiMatKhau extends AppCompatActivity {
 
         if(MatKhauCu.isEmpty()||MatKhauMoi.isEmpty()||NhapLaiMatKhau.isEmpty())
         {
-            Toast.makeText(ThayDoiMatKhau.this, "Vui Lòng Nhập Đầy Đủ Thông Tin !", Toast.LENGTH_LONG).show();
+            Toast.makeText(ThayDoiMatKhau.this, "Vui Lòng Nhập Đầy Đủ Thông Tin !", Toast.LENGTH_SHORT).show();
         }
         else
         {
@@ -82,7 +82,7 @@ public class ThayDoiMatKhau extends AppCompatActivity {
                                 public void onResponse(String response) {
                                     if(response.trim().equals("succes"))
                                     {
-                                        Toast.makeText(ThayDoiMatKhau.this, "Thay Đổi Mật Khẩu Thành Công !", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(ThayDoiMatKhau.this, "Thay Đổi Mật Khẩu Thành Công !", Toast.LENGTH_SHORT).show();
                                         txtMatKhauCuTDMK.setText("");
                                         txtNhapLaiMatKhauTDMK.setText("");
                                         txtMatKhauMoiTDMK.setText("");
@@ -91,14 +91,14 @@ public class ThayDoiMatKhau extends AppCompatActivity {
                                     }
                                     else
                                     {
-                                        Toast.makeText(ThayDoiMatKhau.this, "Thay Đổi Mật Khẩu Thất Bại !", Toast.LENGTH_LONG).show();
+                                        Toast.makeText(ThayDoiMatKhau.this, "Thay Đổi Mật Khẩu Thất Bại !", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             },
                             new Response.ErrorListener() {
                                 @Override
                                 public void onErrorResponse(VolleyError error) {
-                                    Toast.makeText(ThayDoiMatKhau.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
+                                    Toast.makeText(ThayDoiMatKhau.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
                                     Log.d("AAA" , "ERROR!\n"+error.toString());
                                 }
                             }
@@ -115,12 +115,12 @@ public class ThayDoiMatKhau extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(ThayDoiMatKhau.this, "Bạn Nhập Lại Mật Khẩu Mới Chưa Chính Xác , Xin Hãy Kiểm Tra Lại !", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ThayDoiMatKhau.this, "Bạn Nhập Lại Mật Khẩu Mới Chưa Chính Xác , Xin Hãy Kiểm Tra Lại !", Toast.LENGTH_SHORT).show();
                 }
             }
             else
             {
-                Toast.makeText(ThayDoiMatKhau.this, "Bạn Nhập Sai Mật Khẩu Cũ , Vui Lòng Nhập Chính Xác!", Toast.LENGTH_LONG).show();
+                Toast.makeText(ThayDoiMatKhau.this, "Bạn Nhập Sai Mật Khẩu Cũ , Vui Lòng Nhập Chính Xác!", Toast.LENGTH_SHORT).show();
             }
         }
 
