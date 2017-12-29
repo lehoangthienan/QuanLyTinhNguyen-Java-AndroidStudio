@@ -2,6 +2,7 @@ package kerryle.thienan.quanlytinhnguyen;
 
 import android.app.DatePickerDialog;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -42,6 +43,9 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_tinh_nguyen);
+
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.hide();
 
         addControls();
 

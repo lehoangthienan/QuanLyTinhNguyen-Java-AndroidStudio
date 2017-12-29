@@ -10,9 +10,9 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@drawable/logodangnhap"
+        android:label="Hoạt Động Tình Nguyện"
+        android:roundIcon="@drawable/logodangnhap"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity">
@@ -22,18 +22,39 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".ControlTinhNguyenActivity"
             android:theme="@style/Theme.AppCompat.Light"/>
-        <activity android:name=".DangKyActivity" />
-        <activity android:name=".ChiTietHoatDongActivity" />
-        <activity android:name=".QuanLyAdminActivity" />
-        <activity android:name=".kerryle.thienan.ThayDoiMatKhau" />
-        <activity android:name=".kerryle.thienan.ChinhSuaThongTinCaNhanActivity" />
-        <activity android:name=".InsertTinhNguyenActivity" />
-        <activity android:name=".DanhSachTinhNguyenUpdateActivity" />
-        <activity android:name=".XuLyUpdateActivity" />
-        <activity android:name=".DeleteTinhNguyenActivity" />
-        <activity android:name=".XuLyDeleteActivity"></activity>
+
+        <activity android:name=".DangKyActivity"
+            android:theme="@style/AppTheme"/>
+
+        <activity android:name=".ChiTietHoatDongActivity"
+            android:theme="@style/ThemeChiTiet"/>
+
+        <activity android:name=".QuanLyAdminActivity"
+            android:theme="@style/ThemeAdmin"/>
+
+        <activity android:name=".kerryle.thienan.ThayDoiMatKhau"
+            android:theme="@style/ThemeThayDoiMatKhau"/>
+
+        <activity android:name=".kerryle.thienan.ChinhSuaThongTinCaNhanActivity"
+            android:theme="@style/ThemeChinhSuaThongTinCaNhan"/>
+
+        <activity android:name=".InsertTinhNguyenActivity"
+            android:theme="@style/ThemeAdmin"/>
+
+        <activity android:name=".DanhSachTinhNguyenUpdateActivity"
+            android:theme="@style/ThemeAdmin"/>
+
+        <activity android:name=".XuLyUpdateActivity"
+            android:theme="@style/ThemeAdmin"/>
+
+        <activity android:name=".DeleteTinhNguyenActivity"
+            android:theme="@style/ThemeAdmin"/>
+
+        <activity android:name=".XuLyDeleteActivity"
+            android:theme="@style/ThemeAdmin"></activity>
     </application>
 
 </manifest>

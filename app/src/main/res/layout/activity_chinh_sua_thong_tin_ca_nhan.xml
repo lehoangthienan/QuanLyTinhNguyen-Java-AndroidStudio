@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/anhnen1"
     tools:context="kerryle.thienan.quanlytinhnguyen.kerryle.thienan.ChinhSuaThongTinCaNhanActivity">
 
     <TextView
@@ -14,7 +15,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
         android:text="Thay Đổi Thông Tin Cá Nhân"
-        android:textColor="?android:attr/colorPrimary"
+        android:textColor="@android:color/holo_orange_light"
         android:textSize="24sp"
         android:textStyle="bold|italic"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -91,6 +92,7 @@
 
     <ImageButton
         android:id="@+id/btnNgaySinhTDTT"
+        android:background="@drawable/drawimagebuttontime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
@@ -132,6 +134,7 @@
 
     <ImageButton
         android:id="@+id/btnCapNhapTDTT"
+        android:background="@drawable/drawimagebuttontime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="28dp"

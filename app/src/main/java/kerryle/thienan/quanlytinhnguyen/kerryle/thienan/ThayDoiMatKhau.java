@@ -2,6 +2,7 @@ package kerryle.thienan.quanlytinhnguyen.kerryle.thienan;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -20,7 +21,6 @@ import com.android.volley.toolbox.Volley;
 import java.util.HashMap;
 import java.util.Map;
 
-import kerryle.thienan.quanlytinhnguyen.ControlTinhNguyenActivity;
 import kerryle.thienan.quanlytinhnguyen.R;
 
 public class ThayDoiMatKhau extends AppCompatActivity {
@@ -36,6 +36,9 @@ public class ThayDoiMatKhau extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_thay_doi_mat_khau);
 
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.hide();
+
         addControls();
 
         addEvents();
@@ -45,8 +48,7 @@ public class ThayDoiMatKhau extends AppCompatActivity {
         btnQuayLaiTDMK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent QuayLai = new Intent(ThayDoiMatKhau.this, ControlTinhNguyenActivity.class);
-                startActivity(QuayLai);
+                finish();
             }
         });
         btnCapNhapTDMK.setOnClickListener(new View.OnClickListener() {
@@ -85,6 +87,7 @@ public class ThayDoiMatKhau extends AppCompatActivity {
                                         txtNhapLaiMatKhauTDMK.setText("");
                                         txtMatKhauMoiTDMK.setText("");
                                        // startActivity(new Intent(ThayDoiMatKhau.this , ControlTinhNguyenActivity.class));
+                                        finish();
                                     }
                                     else
                                     {
@@ -129,7 +132,6 @@ public class ThayDoiMatKhau extends AppCompatActivity {
         txtNhapLaiMatKhauTDMK = (EditText) findViewById(R.id.txtNhapLaiMatKhauMoiTDMK);
         btnCapNhapTDMK = (ImageButton) findViewById(R.id.btnCapNhapTDMK);
         btnQuayLaiTDMK = (ImageButton) findViewById(R.id.btnQuayLaiTDMK);
-        btnQuayLaiTDMK.setVisibility(View.INVISIBLE);
 
         Intent intent = getIntent();
         taiKhoan = intent.getStringExtra("TaiKhoan");

@@ -8,6 +8,7 @@
     android:paddingRight="16dp"
     android:paddingTop="16dp"
     android:orientation="vertical"
+    android:background="@drawable/anhnen3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="kerryle.thienan.quanlytinhnguyen.ChiTietHoatDongActivity">
@@ -23,7 +24,7 @@
         android:layout_marginTop="-11dp"
         android:hint="Tên Hoạt Động Tình Nguyện"
         android:textAlignment="center"
-        android:textColor="@android:color/holo_blue_bright"
+        android:textColor="#0027ff"
         android:textSize="18sp"
         android:textStyle="bold|italic"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -34,6 +35,7 @@
         android:id="@+id/btnDangKyCT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/drawimagebuttondangky"
         app:srcCompat="@drawable/file"
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -47,6 +49,7 @@
         android:id="@+id/btnHuyDKCT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/drawimagebuttondangky"
         android:layout_marginBottom="2dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="-8dp"
@@ -62,12 +65,12 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="0dp"
         android:hint="Địa Điểm"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="0dp"
         app:layout_constraintTop_toBottomOf="@+id/txtTenTinhNguyenCT" />
 
     <TextView
@@ -78,7 +81,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="1dp"
         android:hint="Ngày Bắt Đầu"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -92,7 +95,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="0dp"
         android:hint="Ngày Kết Thúc"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -106,7 +109,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="1dp"
         android:hint="Số Lượng Tối Đa"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -120,7 +123,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="0dp"
         android:hint="Số Lượng Tối Thiểu"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -134,7 +137,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="-6dp"
         android:hint="Số Lượng Tham Gia "
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -144,20 +147,21 @@
         android:id="@+id/textView43"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Liên Hê :"
-        android:textColor="@android:color/background_light"
-        android:layout_marginTop="-2dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtTenTruongDaiHocCT"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="-2dp"
+        android:text="Liên Hê :"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintHorizontal_bias="0.0" />
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTenTruongDaiHocCT" />
 
     <ImageButton
         android:id="@+id/btnGoiCT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/drawimagebuttoncall"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="10dp"
         app:layout_constraintHorizontal_bias="1.0"
@@ -171,15 +175,15 @@
         android:id="@+id/txtSDT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="09730430123"
-        android:textColor="@android:color/background_light"
-        app:layout_constraintLeft_toRightOf="@+id/textView43"
         android:layout_marginLeft="1dp"
         android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
         android:layout_marginTop="-1dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtTenTruongDaiHocCT"
-        app:layout_constraintHorizontal_bias="0.0" />
+        android:hint="09730430123"
+        android:textColor="@android:color/background_dark"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/textView43"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtTenTruongDaiHocCT" />
 
     <ImageView
         android:id="@+id/imgHinhAnh"
@@ -193,24 +197,6 @@
         android:layout_marginLeft="8dp"
         app:layout_constraintLeft_toLeftOf="parent" />
 
-    <ScrollView
-        android:layout_width="0dp"
-        android:layout_height="100dp"
-        android:layout_marginBottom="63dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent">
-
-        <TextView
-            android:id="@+id/txtNoiDung"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Hiển Thị Nội Dung "
-            android:textColor="@android:color/background_light" />
-    </ScrollView>
-
     <TextView
         android:id="@+id/txtTenTruongDaiHocCT"
         android:layout_width="wrap_content"
@@ -219,10 +205,31 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="-16dp"
         android:hint="Tên Trường Đại Học "
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtSLThamGiaCT" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/txtSDT"
+        app:layout_constraintVertical_bias="0.0">
+
+        <TextView
+            android:id="@+id/txtNoiDung"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Hiển Thị Nội Dung "
+            android:textColor="@android:color/background_dark" />
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>

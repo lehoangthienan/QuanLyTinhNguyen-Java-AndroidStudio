@@ -3,6 +3,7 @@ package kerryle.thienan.quanlytinhnguyen.kerryle.thienan;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
@@ -53,6 +54,9 @@ public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chinh_sua_thong_tin_ca_nhan);
+
+        ActionBar actionBar =getSupportActionBar();
+        actionBar.hide();
 
         addControls();
 
