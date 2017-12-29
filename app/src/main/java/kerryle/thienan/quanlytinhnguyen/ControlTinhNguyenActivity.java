@@ -422,6 +422,8 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_timkiem,menu);
+        MenuInflater   inflater1 =getMenuInflater();
+        inflater1.inflate(R.menu.menu_main,menu);
         MenuItem  mnuSearch = menu.findItem(R.id.mnuSearch);
         SearchView searchView = (SearchView) mnuSearch.getActionView();
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
@@ -438,5 +440,17 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
         });
 
         return super.onCreateOptionsMenu(menu);
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if(item.getItemId()==R.id.mnuXemTinhNguyenTheoTruong)
+        {
+            startActivity(new Intent(ControlTinhNguyenActivity.this , DanhSachTruongActivity.class));
+        }
+        else if (item.getItemId()==R.id.mnuThongTinUngDung)
+        {
+            startActivity(new Intent(ControlTinhNguyenActivity.this , ThongTinUngDungActivity.class));
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

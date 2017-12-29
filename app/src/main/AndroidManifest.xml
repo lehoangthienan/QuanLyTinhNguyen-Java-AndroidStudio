@@ -55,10 +55,13 @@
         <activity
             android:name=".XuLyDeleteActivity"
             android:theme="@style/ThemeAdmin" />
-        <activity android:name=".DanhSachSinhVienThamGiaActivity"
-            android:theme="@style/ThemeDanhSachSinhVien"  >
-
-        </activity>
+        <activity
+            android:name=".DanhSachSinhVienThamGiaActivity"
+            android:theme="@style/ThemeDanhSachSinhVien" />
+        <activity android:name=".DanhSachTruongActivity"
+            android:theme="@style/ThemeAdmin"/>
+        <activity android:name=".ThongTinUngDungActivity"
+            android:theme="@style/ThemeAdmin" ></activity>
     </application>
 
 </manifest>

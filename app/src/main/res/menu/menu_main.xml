@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mnuXemTinhNguyenTheoTruong"
+        android:title="Xem Tình Nguyện Theo Trường"
+        ></item>
+    <item android:id="@+id/mnuThongTinUngDung"
+        android:title="Thông Tin Ứng Dụng"
+        ></item>
+</menu>

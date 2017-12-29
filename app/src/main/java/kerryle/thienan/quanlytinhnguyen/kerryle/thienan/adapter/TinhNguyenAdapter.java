@@ -152,14 +152,6 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
                 holder.btnDangKyNhanh.setVisibility(View.INVISIBLE);
                 notifyDataSetChanged();
             }
-//            else if(maTinhNguyen.getMATN().toString().trim().equals(MSVCheckAn)==true)
-//            {
-//                if(checkHuyDangKy==true)
-//                {
-//                    holder.btnDangKyNhanh.setVisibility(View.VISIBLE);
-//                    notifyDataSetChanged();
-//                }
-//            }
         }
         ImageButton btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
         btnChiTiet.setOnClickListener(new View.OnClickListener() {

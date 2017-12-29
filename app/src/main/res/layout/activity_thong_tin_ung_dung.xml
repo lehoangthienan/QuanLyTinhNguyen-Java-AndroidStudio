@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/anhnen"
+    android:orientation="vertical"
+    tools:context="kerryle.thienan.quanlytinhnguyen.ThongTinUngDungActivity">
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Nhập môn ứng dụng di động"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="SE114.I12 - VN"
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phan Nguyệt Minh"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView47"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Phối Hợp Thực Hiện : "
+        android:textColor="@android:color/background_light"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView48"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đặng Việt Dũng "
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView49"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Lê Giô Na"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView50"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Đoàn Văn Châu"
+        android:textColor="@android:color/background_light"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+</LinearLayout>
