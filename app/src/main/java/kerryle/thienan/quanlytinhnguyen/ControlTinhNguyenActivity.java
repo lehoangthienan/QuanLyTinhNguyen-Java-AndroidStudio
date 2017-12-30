@@ -9,7 +9,6 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
@@ -65,7 +64,7 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
     TextView txtHoTenCTND , txtNamSinhCTND , txtMaSoSinhVienCTND ,txtTenTruongDaiHocCTND ,txtSoHoatDongThamGiaCTND;
     ImageButton btnThayDoiThongTinCaNhan , btnThayDoiMatKhau ;
 
-    Button btnChiTiet;
+   // Button btnChiTiet;
 
    // List<MaTinhNguyenSinhVien> dsMaTinhNguyen ;
 
@@ -191,7 +190,7 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
         btnThayDoiThongTinCaNhan = (ImageButton) findViewById(R.id.btnThayDoiThongTinCaNhan);
         btnThayDoiMatKhau = (ImageButton) findViewById(R.id.btnThayDoiMatKhau);
 
-        btnChiTiet = (Button) findViewById(R.id.btnChiTiet);
+       // btnChiTiet = (Button) findViewById(R.id.btnChiTiet);
 
         tabHost = (TabHost) findViewById(R.id.tabHost);
         tabHost.setup();

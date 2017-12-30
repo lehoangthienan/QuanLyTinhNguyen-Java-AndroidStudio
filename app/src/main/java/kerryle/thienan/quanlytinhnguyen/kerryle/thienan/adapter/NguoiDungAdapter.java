@@ -84,18 +84,18 @@ public class NguoiDungAdapter extends BaseAdapter {
         holder.txtNamSinhCTND.setText("Ngày Sinh : " + nguoiDung.getNgaySinh().toString());
 
 
-        holder.btnThayDoiThongTinCaNhan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
-        holder.btnThayDoiMatKhau.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-            }
-        });
+//        holder.btnThayDoiThongTinCaNhan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
+//        holder.btnThayDoiMatKhau.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//
+//            }
+//        });
 
         return view;
 

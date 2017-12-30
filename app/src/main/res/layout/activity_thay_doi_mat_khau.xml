@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/anhnen2"
+    android:background="@drawable/anhnenbaomat"
     tools:context="kerryle.thienan.quanlytinhnguyen.kerryle.thienan.ThayDoiMatKhau">
 
     <TextView
@@ -15,7 +15,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
         android:text="Thay Đổi Mật Khẩu"
-        android:textColor="@android:color/holo_blue_bright"
+        android:textColor="#00ff00"
         android:textSize="30sp"
         android:textStyle="bold|italic"
         app:layout_constraintHorizontal_bias="0.504"
@@ -109,7 +109,7 @@
         android:id="@+id/btnCapNhapTDMK"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/drawimagebuttincapnhap"
+        android:background="@drawable/drawimagebuttincapnhapmatkhau"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="42dp"
@@ -126,7 +126,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="42dp"
-        android:background="@drawable/drawimagebuttincapnhap"
+        android:background="@drawable/drawimagebuttincapnhapmatkhau"
         app:layout_constraintHorizontal_bias="0.872"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

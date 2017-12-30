@@ -49,6 +49,7 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.TinhNguyen;
 
 import static kerryle.thienan.quanlytinhnguyen.ControlTinhNguyenActivity.maSinhVien;
 import static kerryle.thienan.quanlytinhnguyen.R.id.btnDangKyNhanh;
+import static kerryle.thienan.quanlytinhnguyen.R.id.btnDanhSachSinhVienTham;
 
 /**
  * Created by Thien An on 2017-12-10.
@@ -123,7 +124,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             holder.btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
             holder.btnDangKyNhanh =(ImageButton) view.findViewById(btnDangKyNhanh);
             holder.txtTenTruongDaiHoc =(TextView) view.findViewById(R.id.txtTenTruongDaiHoc);
-            holder.btnDanhSachSinhVienTham =(ImageButton) view.findViewById(R.id.btnDanhSachSinhVienTham);
+            holder.btnDanhSachSinhVienTham =(ImageButton) view.findViewById(btnDanhSachSinhVienTham);
 
             urlGetMa= "http://quanlyhoatdongtinhnguyen.000webhostapp.com/gettinhnguyensinhvien.php?MASV="+maSinhVien;
             getMaTinhNguyen(urlGetMa);
@@ -153,8 +154,8 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
                 notifyDataSetChanged();
             }
         }
-        ImageButton btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
-        btnChiTiet.setOnClickListener(new View.OnClickListener() {
+       // ImageButton btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
+        holder.btnChiTiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MATN = tinhNguyen.getMATN().toString();
@@ -163,14 +164,14 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             }
         });
 
-       final ImageButton btnDKNhanh =(ImageButton) view.findViewById(btnDangKyNhanh);
-        btnDKNhanh.setOnClickListener(new View.OnClickListener() {
+      // final ImageButton btnDKNhanh =(ImageButton) view.findViewById(R.id.btnDangKyNhanh);
+        holder.btnDangKyNhanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MATN = tinhNguyen.getMATN().toString();
                 maTinhNguyen = MATN;
                 insert(url);
-                btnDKNhanh.setVisibility(View.INVISIBLE);
+                holder.btnDangKyNhanh.setVisibility(View.INVISIBLE);
                 String url3 = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/updatesoluongthamgia.php?MATN="+MATN;
                 String url4 = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/getsoluongmaxtinhnguyen.php?MATN="+MATN;
                 String url5 ="http://quanlyhoatdongtinhnguyen.000webhostapp.com/getsoluongthamgia.php?MATN="+MATN;
@@ -180,8 +181,8 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             }
         });
 
-        ImageButton btnDanhSachSinhVienTham =(ImageButton) view.findViewById(R.id.btnDanhSachSinhVienTham);
-        btnDanhSachSinhVienTham.setOnClickListener(new View.OnClickListener() {
+        //ImageButton btnDanhSachSinhVienTham =(ImageButton) view.findViewById(R.id.btnDanhSachSinhVienTham);
+        holder.btnDanhSachSinhVienTham.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 MATN = tinhNguyen.getMATN().toString();
