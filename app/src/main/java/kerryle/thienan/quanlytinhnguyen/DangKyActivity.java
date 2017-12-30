@@ -143,7 +143,7 @@ public class DangKyActivity extends AppCompatActivity {
                 Map<String ,String> params = new HashMap<>();
                 params.put("MASV",txtMaSinhVien.getText().toString().trim());
                 params.put("TenSV" , txtHoTen.getText().toString().trim());
-                params.put("TenTruong",txtTenTruong.getText().toString().trim());
+                params.put("MAT",txtTenTruong.getText().toString().trim());
                 params.put("NgaySinh" , NgaySinh);
                 return params;
             }

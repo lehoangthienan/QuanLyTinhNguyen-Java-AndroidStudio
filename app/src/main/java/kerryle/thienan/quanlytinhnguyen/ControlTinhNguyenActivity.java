@@ -68,6 +68,8 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
 
    // List<MaTinhNguyenSinhVien> dsMaTinhNguyen ;
 
+    SearchView sv;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -237,6 +239,7 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
 
 //        dsMaTinhNguyen = new ArrayList<>();
 //        getMaTinhNguyen(urlGetMa);
+
     }
 
 //    private void getMaTinhNguyen(String urlGetMa) {
@@ -421,10 +424,15 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_timkiem,menu);
+
         MenuInflater   inflater1 =getMenuInflater();
         inflater1.inflate(R.menu.menu_main,menu);
+
         MenuItem  mnuSearch = menu.findItem(R.id.mnuSearch);
+
         SearchView searchView = (SearchView) mnuSearch.getActionView();
+
+
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {

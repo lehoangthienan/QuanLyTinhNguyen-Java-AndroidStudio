@@ -42,7 +42,6 @@ public class XuLyUpdateActivity extends AppCompatActivity {
             txtNoiDungUpdate ,
             txtSLMaxUpdate ,
             txtSLMinUpdate ,
-            txtSLThamGiaUpdate ,
             txtMaTruongUpdate ,
             txtinkAnhUpdate;
 
@@ -56,7 +55,6 @@ public class XuLyUpdateActivity extends AppCompatActivity {
     SimpleDateFormat sdf1 = new SimpleDateFormat("dd/MM/yyyy");
     SimpleDateFormat sdf2 = new SimpleDateFormat("yyyy/MM/dd");
 
-    //String NgayBD , NgayKT;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +96,6 @@ public class XuLyUpdateActivity extends AppCompatActivity {
         String diaDiem = txtDiaDiemUpdate.getText().toString().trim();
         String SLMax = txtSLMaxUpdate.getText().toString().trim();
         String SLMin = txtSLMinUpdate.getText().toString().trim();
-        String SLThamGia = txtSLThamGiaUpdate.getText().toString().trim();
         String maTruong = txtMaTruongUpdate.getText().toString().trim();
         String linkAnh = txtinkAnhUpdate.getText().toString().trim();
         String ngayBatDau = txtNgayBDUpdate.getText().toString().trim();
@@ -111,7 +108,6 @@ public class XuLyUpdateActivity extends AppCompatActivity {
                 diaDiem.isEmpty()||
                 SLMax.isEmpty()||
                 SLMin.isEmpty()||
-                SLThamGia.isEmpty()||
                 maTruong.isEmpty()||
                 linkAnh.isEmpty()||
                 ngayBatDau.isEmpty()||
@@ -162,7 +158,6 @@ public class XuLyUpdateActivity extends AppCompatActivity {
                 params.put("DiaDiem",txtDiaDiemUpdate.getText().toString().trim());
                 params.put("SLMax" , txtSLMaxUpdate.getText().toString().trim());
                 params.put("SLMin" , txtSLMinUpdate.getText().toString().trim());
-                params.put("SLThamGia",txtSLThamGiaUpdate.getText().toString().trim());
                 params.put("MAT" , txtMaTruongUpdate.getText().toString().trim());
                 params.put("HinhAnh" , txtinkAnhUpdate.getText().toString().trim());
                 return params;
@@ -224,7 +219,6 @@ public class XuLyUpdateActivity extends AppCompatActivity {
         txtNoiDungUpdate = (EditText) findViewById(R.id.txtNoiDungTNUpdate);
         txtSLMaxUpdate = (EditText) findViewById(R.id.txtSLMaxUpdate);
         txtSLMinUpdate = (EditText) findViewById(R.id.txtSLMinUpdate);
-        txtSLThamGiaUpdate = (EditText) findViewById(R.id.txtSLThamGiaUpdate);
         txtMaTruongUpdate = (EditText) findViewById(R.id.txtMaTruongUpdate);
         txtinkAnhUpdate = (EditText) findViewById(R.id.txtLinkAnhUpdate);
 
@@ -262,7 +256,6 @@ public class XuLyUpdateActivity extends AppCompatActivity {
                                 txtNgayBDUpdate.setText(tinhnguyen.getNgayGioBatDau().toString());
                                 txtSLMaxUpdate.setText(String.valueOf(tinhnguyen.getSLMax()));
                                 txtSLMinUpdate.setText(String.valueOf(tinhnguyen.getSLMin()));
-                                txtSLThamGiaUpdate.setText(String.valueOf(tinhnguyen.getSLThamGia()));
                                 txtSDTUpdate.setText(String.valueOf(tinhnguyen.getSDT()));
                                 txtNoiDungUpdate.setText(tinhnguyen.getNoiDung().toString());
                                 txtMaTruongUpdate.setText(tinhnguyen.getMAT().toString());

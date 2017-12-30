@@ -28,7 +28,7 @@ import java.util.Map;
 public class InsertTinhNguyenActivity extends AppCompatActivity {
 
     TextView txtNgayBDInsert , txtNgayKTInsert ;
-    EditText txtMaTNInsert , txtTenTNInsert , txtNoiDungInsert , txtSDTInsert , txtDiaDiemInsert , txtSLMaxInsert , txtSLMinInsert , txtSLThamGiaInsert , txtMaTruongInsert , txtLinkAnhInsert ;
+    EditText txtMaTNInsert , txtTenTNInsert , txtNoiDungInsert , txtSDTInsert , txtDiaDiemInsert , txtSLMaxInsert , txtSLMinInsert , txtMaTruongInsert , txtLinkAnhInsert ;
     ImageButton btnNgayBDInsert , btnNgayKTInsert , btnThemTNInsert ;
 
     String urlInsert = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/inserttinhnguyen.php";
@@ -81,7 +81,6 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
         String diaDiem = txtDiaDiemInsert.getText().toString().trim();
         String SLMax = txtSLMaxInsert.getText().toString().trim();
         String SLMin = txtSLMinInsert.getText().toString().trim();
-        String SLThamGia = txtSLThamGiaInsert.getText().toString().trim();
         String maTruong = txtMaTruongInsert.getText().toString().trim();
         String linkAnh = txtLinkAnhInsert.getText().toString().trim();
         String ngayBatDau = txtNgayBDInsert.getText().toString().trim();
@@ -94,7 +93,6 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
                 diaDiem.isEmpty()||
                 SLMax.isEmpty()||
                 SLMin.isEmpty()||
-                SLThamGia.isEmpty()||
                 maTruong.isEmpty()||
                 linkAnh.isEmpty()||
                 ngayBatDau.isEmpty()||
@@ -126,7 +124,6 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
                             txtDiaDiemInsert.setText("");
                             txtSLMaxInsert.setText("");
                             txtSLMinInsert.setText("");
-                            txtSLThamGiaInsert.setText("");
                             txtMaTruongInsert.setText("");
                             txtLinkAnhInsert.setText("");
                             txtNgayBDInsert.setText("");
@@ -159,7 +156,6 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
                 params.put("DiaDiem",txtDiaDiemInsert.getText().toString().trim());
                 params.put("SLMax" , txtSLMaxInsert.getText().toString().trim());
                 params.put("SLMin" , txtSLMinInsert.getText().toString().trim());
-                params.put("SLThamGia",txtSLThamGiaInsert.getText().toString().trim());
                 params.put("MAT" , txtMaTruongInsert.getText().toString().trim());
                 params.put("HinhAnh" , txtLinkAnhInsert.getText().toString().trim());
                 return params;
@@ -225,7 +221,6 @@ public class InsertTinhNguyenActivity extends AppCompatActivity {
         txtDiaDiemInsert = (EditText) findViewById(R.id.txtDiaDiemInsert);
         txtSLMaxInsert = (EditText) findViewById(R.id.txtSLMaxInsert);
         txtSLMinInsert = (EditText) findViewById(R.id.txtSLMinInsert);
-        txtSLThamGiaInsert = (EditText) findViewById(R.id.txtSLThamGiaInsert);
         txtMaTruongInsert = (EditText) findViewById(R.id.txtMaTruongInsert);
         txtLinkAnhInsert = (EditText) findViewById(R.id.txtLinkAnhInsert);
         btnNgayBDInsert = (ImageButton) findViewById(R.id.btnNgayBDInsert);

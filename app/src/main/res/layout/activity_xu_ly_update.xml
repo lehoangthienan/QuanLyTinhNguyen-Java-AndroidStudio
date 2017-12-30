@@ -195,22 +195,6 @@
                 android:inputType="textPersonName" />
 
             <TextView
-                android:id="@+id/textView58"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Số Lượng Tham Gia ( Đã Có Sẵn ) :"
-                android:textColor="@android:color/background_light"
-                android:textStyle="bold" />
-
-            <EditText
-                android:id="@+id/txtSLThamGiaUpdate"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:ems="10"
-                android:hint="Nhập Số Lượng Tham Gia "
-                android:inputType="numberDecimal" />
-
-            <TextView
                 android:id="@+id/textView64"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

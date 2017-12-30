@@ -48,8 +48,6 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.SoLuongThamGia;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.TinhNguyen;
 
 import static kerryle.thienan.quanlytinhnguyen.ControlTinhNguyenActivity.maSinhVien;
-import static kerryle.thienan.quanlytinhnguyen.R.id.btnDangKyNhanh;
-import static kerryle.thienan.quanlytinhnguyen.R.id.btnDanhSachSinhVienTham;
 
 /**
  * Created by Thien An on 2017-12-10.
@@ -122,9 +120,9 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             holder.txtSLConLai = (TextView) view.findViewById(R.id.txtSLConLai);
             holder.txtSLThamGia = (TextView) view.findViewById(R.id.txtSLThamGia);
             holder.btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
-            holder.btnDangKyNhanh =(ImageButton) view.findViewById(btnDangKyNhanh);
+            holder.btnDangKyNhanh =(ImageButton) view.findViewById(R.id.btnDangKyNhanh);
             holder.txtTenTruongDaiHoc =(TextView) view.findViewById(R.id.txtTenTruongDaiHoc);
-            holder.btnDanhSachSinhVienTham =(ImageButton) view.findViewById(btnDanhSachSinhVienTham);
+            holder.btnDanhSachSinhVienTham =(ImageButton) view.findViewById(R.id.btnDanhSachSinhVienTham);
 
             urlGetMa= "http://quanlyhoatdongtinhnguyen.000webhostapp.com/gettinhnguyensinhvien.php?MASV="+maSinhVien;
             getMaTinhNguyen(urlGetMa);
@@ -135,6 +133,8 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
         {
             holder = (ViewHolder) view.getTag();
         }
+
+
         final TinhNguyen tinhNguyen = this.objects.get(position);
 
         String SoLuongThamGia = String.valueOf(tinhNguyen.getSLThamGia());
@@ -146,15 +146,6 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
         holder.txtSLConLai.setText("Số Lượng Còn Lại : " +(tinhNguyen.getSLMax()-tinhNguyen.getSLThamGia()));
         holder.txtTenTruongDaiHoc.setText("Thuộc : " + tinhNguyen.getMAT().toString());
 
-        for(MaTinhNguyenSinhVien maTinhNguyen :dsMaTinhNguyen)
-        {
-            if(maTinhNguyen.getMATN().toString().trim().equals(tinhNguyen.getMATN().toString())==true)
-            {
-                holder.btnDangKyNhanh.setVisibility(View.INVISIBLE);
-                notifyDataSetChanged();
-            }
-        }
-       // ImageButton btnChiTiet =(ImageButton) view.findViewById(R.id.btnChiTiet);
         holder.btnChiTiet.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -164,7 +155,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             }
         });
 
-      // final ImageButton btnDKNhanh =(ImageButton) view.findViewById(R.id.btnDangKyNhanh);
+        holder.btnDangKyNhanh.setVisibility(View.VISIBLE);
         holder.btnDangKyNhanh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -181,7 +172,6 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             }
         });
 
-        //ImageButton btnDanhSachSinhVienTham =(ImageButton) view.findViewById(R.id.btnDanhSachSinhVienTham);
         holder.btnDanhSachSinhVienTham.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -190,6 +180,16 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
                 xuLyMoDanhSachSinhVien(maTinhNguyen);
             }
         });
+
+        for(MaTinhNguyenSinhVien maTinhNguyen :dsMaTinhNguyen)
+        {
+            if(maTinhNguyen.getMATN().toString().trim().equals(tinhNguyen.getMATN().toString())==true)
+            {
+                holder.btnDangKyNhanh.setVisibility(View.INVISIBLE);
+                // notifyDataSetChanged();
+            }
+        }
+
 
         return view;
 
