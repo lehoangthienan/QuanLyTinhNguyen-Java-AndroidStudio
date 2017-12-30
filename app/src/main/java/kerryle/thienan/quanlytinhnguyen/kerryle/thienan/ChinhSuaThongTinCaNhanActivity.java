@@ -32,7 +32,7 @@ import kerryle.thienan.quanlytinhnguyen.R;
 public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
 
     // Khởi tạo
-    EditText   txtTenSinhVienTDTT,txtTenTruongTDTT ,txtNgaySinhTDTT ;
+    EditText   txtTenSinhVienTDTT,txtMaTruongTDTT ,txtNgaySinhTDTT ;
     ImageButton btnNgaySinhTDTT ,btnCapNhapTDTT ;
     TextView txtMaSinhVienTDTT;
 
@@ -43,7 +43,7 @@ public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
     String ngaySinh ,ngaySinh2;
 
     // Khởi tạo biến để lưu giá trị bên Control đẩy qua
-    String MASV , TaiKhoan  , hoTen ,tenTruong , ngaySinh1;
+    String MASV , TaiKhoan  , hoTen ,maTruong , ngaySinh1;
 
     //Khởi tạo biến lưu đường dẩn xử lý dữ liệu  MySQL
     String url1 , url2 , url3 ;
@@ -76,8 +76,6 @@ public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-              //  xuLyCapNhapMASVTaiKhoan();
-              //  xuLyCapNhapMASVHoatDong();
                 if(check3==true)
                 {
                     ngaySinh2 =ngaySinh;
@@ -95,78 +93,6 @@ public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
         }
     }
 
-//    private void xuLyCapNhapMASVHoatDong() {
-//        RequestQueue requestQueue = Volley.newRequestQueue(this);
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST,
-//                url3,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        if(response.trim().equals("succes"))
-//                        {
-//                            check1 = true;
-//                        }
-//                        else
-//                        {
-//                            check1 = false;
-//                        }
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(ChinhSuaThongTinCaNhanActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
-//                        Log.d("AAA" , "ERROR!\n"+error.toString());
-//                    }
-//                }
-//        ){
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String ,String> params = new HashMap<>();
-//                params.put("MASV",txtMaSinhVienTDTT.getText().toString().trim());
-//                return params;
-//            }
-//
-//        };
-//        requestQueue.add(stringRequest);
-//    }
-
-//    private void xuLyCapNhapMASVTaiKhoan() {
-//        RequestQueue requestQueue = Volley.newRequestQueue(this);
-//        StringRequest stringRequest = new StringRequest(Request.Method.POST,
-//                url2,
-//                new Response.Listener<String>() {
-//                    @Override
-//                    public void onResponse(String response) {
-//                        if(response.trim().equals("succes"))
-//                        {
-//                            check2 = true;
-//                        }
-//                        else
-//                        {
-//                            check2 = false;
-//                        }
-//                    }
-//                },
-//                new Response.ErrorListener() {
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        Toast.makeText(ChinhSuaThongTinCaNhanActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_LONG).show();
-//                        Log.d("AAA" , "ERROR!\n"+error.toString());
-//                    }
-//                }
-//        ){
-//            @Override
-//            protected Map<String, String> getParams() throws AuthFailureError {
-//                Map<String ,String> params = new HashMap<>();
-//                params.put("MASV",txtMaSinhVienTDTT.getText().toString().trim());
-//                return params;
-//            }
-//
-//        };
-//        requestQueue.add(stringRequest);
-//
-//    }
 
     private void xuLyCapNhapSinhVien() {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
@@ -198,7 +124,7 @@ public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String ,String> params = new HashMap<>();
                 params.put("TenSV" , txtTenSinhVienTDTT.getText().toString().trim());
-                params.put("TenTruong",txtTenTruongTDTT.getText().toString().trim());
+                params.put("MAT",txtMaTruongTDTT.getText().toString().trim());
                 params.put("NgaySinh" , ngaySinh2.toString());
                 return params;
             }
@@ -233,7 +159,7 @@ public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
     private void addControls() {
         txtMaSinhVienTDTT = (TextView) findViewById(R.id.txtMaSinhVienTDTT);
         txtTenSinhVienTDTT = (EditText) findViewById(R.id.txtTenSinhVienTDTT);
-        txtTenTruongTDTT = (EditText) findViewById(R.id.txtTenTruongTDTT);
+        txtMaTruongTDTT = (EditText) findViewById(R.id.txtMaTruongTDTT);
         txtNgaySinhTDTT = (EditText) findViewById(R.id.txtNgaySinhTDTT);
         btnNgaySinhTDTT = (ImageButton) findViewById(R.id.btnNgaySinhTDTT);
         btnCapNhapTDTT = (ImageButton) findViewById(R.id.btnCapNhapTDTT);
@@ -242,12 +168,12 @@ public class ChinhSuaThongTinCaNhanActivity extends AppCompatActivity {
         MASV = intent.getStringExtra("MASV");
         TaiKhoan = intent.getStringExtra("TaiKhoan");
         hoTen = intent.getStringExtra("HoTen");
-        tenTruong = intent.getStringExtra("TenTruong");
+        maTruong = intent.getStringExtra("MaTruong");
         ngaySinh1 = intent.getStringExtra("NgaySinh");
 
         txtMaSinhVienTDTT.setText(MASV);
         txtTenSinhVienTDTT.setText(hoTen);
-        txtTenTruongTDTT.setText(tenTruong);
+        txtMaTruongTDTT.setText(maTruong);
         txtNgaySinhTDTT.setText(ngaySinh1);
 
         check1=false;

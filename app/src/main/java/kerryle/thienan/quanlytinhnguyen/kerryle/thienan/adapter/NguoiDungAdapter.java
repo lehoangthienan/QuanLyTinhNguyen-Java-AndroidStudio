@@ -31,7 +31,7 @@ public class NguoiDungAdapter extends BaseAdapter {
         this.objects=objects;
     }
     private  class ViewHolder{
-        TextView   txtHoTenCTND , txtNamSinhCTND ,txtMaSoSinhVienCTND , txtTenTruongCTND  ;
+        TextView   txtHoTenCTND , txtNamSinhCTND ,txtMaSoSinhVienCTND , txtTenTruongCTND , txtMaTruongCTND  ;
         ImageButton btnThayDoiThongTinCaNhan, btnThayDoiMatKhau;
 
     }
@@ -66,6 +66,7 @@ public class NguoiDungAdapter extends BaseAdapter {
             holder.txtMaSoSinhVienCTND = (TextView) view.findViewById(R.id.txtMaSoSinhVienCTND);
             holder.txtNamSinhCTND = (TextView) view.findViewById(R.id.txtNamSinhCTND);
             holder.txtTenTruongCTND = (TextView) view.findViewById(R.id.txtTenTruongDaiHocCTND);
+            holder.txtMaTruongCTND =(TextView) view.findViewById(R.id.txtMaTruongCTND);
             holder.btnThayDoiThongTinCaNhan = (ImageButton)  view.findViewById(R.id.btnThayDoiThongTinCaNhan);
             holder.btnThayDoiMatKhau = (ImageButton) view.findViewById(R.id.btnThayDoiMatKhau);
 
@@ -80,22 +81,10 @@ public class NguoiDungAdapter extends BaseAdapter {
 
         holder.txtHoTenCTND.setText("Tên : "+nguoiDung.getTenSV().toString());
         holder.txtMaSoSinhVienCTND.setText("Mã Số Sinh Viên : " +nguoiDung.getMASV().toString());
-        holder.txtTenTruongCTND.setText("Tên Trường : " +nguoiDung.getTenTruong().toString());
+        holder.txtMaTruongCTND.setText("Tên Trường : " +nguoiDung.getMAT().toString());
         holder.txtNamSinhCTND.setText("Ngày Sinh : " + nguoiDung.getNgaySinh().toString());
 
 
-//        holder.btnThayDoiThongTinCaNhan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
-//        holder.btnThayDoiMatKhau.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
 
         return view;
 

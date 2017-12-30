@@ -37,6 +37,7 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.adapter.TinhNguyenAdapte
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.HoatDongDangKy;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.NguoiDung;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.SoHoatDongThamGia;
+import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.TenTruong;
 import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.TinhNguyen;
 
 public class ControlTinhNguyenActivity extends AppCompatActivity {
@@ -61,7 +62,7 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
     public static String maSinhVien;
     String TK , MK;
 
-    TextView txtHoTenCTND , txtNamSinhCTND , txtMaSoSinhVienCTND ,txtTenTruongDaiHocCTND ,txtSoHoatDongThamGiaCTND;
+    TextView txtHoTenCTND , txtNamSinhCTND , txtMaSoSinhVienCTND ,txtTenTruongDaiHocCTND ,txtSoHoatDongThamGiaCTND , txtMaTruongCTND;
     ImageButton btnThayDoiThongTinCaNhan , btnThayDoiMatKhau ;
 
    // Button btnChiTiet;
@@ -69,6 +70,8 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
    // List<MaTinhNguyenSinhVien> dsMaTinhNguyen ;
 
     SearchView sv;
+
+    String  urlGetTenTruong , maTruong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,7 +102,7 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
                 ThayDoiMK.putExtra("TaiKhoan" , TK);
                 ThayDoiMK.putExtra("MASV" , txtMaSoSinhVienCTND.getText().toString());
                 ThayDoiMK.putExtra("HoTen" , txtHoTenCTND.getText().toString());
-                ThayDoiMK.putExtra("TenTruong" , txtTenTruongDaiHocCTND.getText().toString());
+                ThayDoiMK.putExtra("MaTruong" , txtMaTruongCTND.getText().toString());
                 ThayDoiMK.putExtra("NgaySinh" , txtNamSinhCTND.getText().toString());
 
                 startActivity(ThayDoiMK);
@@ -127,7 +130,6 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
     private void xuLyShowThongTinNguoiDung() {
         getData1(urlGetDaTa1);
         getData3(urlGetDaTa3);
-
     }
 
     private void xuLyDSDangKyNhanh() {
@@ -191,6 +193,7 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
         txtSoHoatDongThamGiaCTND = (TextView) findViewById(R.id.txtSoHoatDongThamGiaCTND);
         btnThayDoiThongTinCaNhan = (ImageButton) findViewById(R.id.btnThayDoiThongTinCaNhan);
         btnThayDoiMatKhau = (ImageButton) findViewById(R.id.btnThayDoiMatKhau);
+        txtMaTruongCTND= (TextView) findViewById(R.id.txtMaTruongCTND);
 
        // btnChiTiet = (Button) findViewById(R.id.btnChiTiet);
 
@@ -237,8 +240,7 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
         getData2(urlGetDaTa2);
         getData3(urlGetDaTa3);
 
-//        dsMaTinhNguyen = new ArrayList<>();
-//        getMaTinhNguyen(urlGetMa);
+
 
     }
 
@@ -273,7 +275,36 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
 //        );
 //        requestQueue.add(jsonArrayRequest);
 //    }
-
+    private void getTenTruong(String urlGetTenTruong) {
+    RequestQueue requestQueue = Volley.newRequestQueue(this);
+    JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
+            Request.Method.GET, urlGetTenTruong, null,
+            new Response.Listener<JSONArray>() {
+                @Override
+                public void onResponse(JSONArray response) {
+                    for (int i = 0; i < response.length(); i++)
+                    {
+                        try {
+                            JSONObject object = response.getJSONObject(i);
+                            TenTruong tentruong =new Gson().fromJson(String.valueOf(object), TenTruong.class);
+                            txtTenTruongDaiHocCTND.setText(tentruong.getTenTruong());
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                    // de cap nhap lai du lieu
+                    //adapterNguoiDung.notifyDataSetChanged();
+                }
+            },
+            new Response.ErrorListener() {
+                @Override
+                public void onErrorResponse(VolleyError error) {
+                    Toast.makeText(ControlTinhNguyenActivity.this, error.toString(), Toast.LENGTH_LONG).show();
+                }
+            }
+    );
+    requestQueue.add(jsonArrayRequest);
+}
     private void getData3(String urlGetDaTa3) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
@@ -356,9 +387,11 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
                                NguoiDung nguoiDung =new Gson().fromJson(String.valueOf(object), NguoiDung.class);
                                 txtHoTenCTND.setText(nguoiDung.getTenSV().toString());
                                 txtMaSoSinhVienCTND.setText(nguoiDung.getMASV().toString());
-                                txtTenTruongDaiHocCTND.setText(nguoiDung.getTenTruong().toString());
+                                txtMaTruongCTND.setText(nguoiDung.getMAT().toString());
                                 txtNamSinhCTND.setText(nguoiDung.getNgaySinh().toString());
-
+                                maTruong = nguoiDung.getMAT().toString();
+                                urlGetTenTruong="http://quanlyhoatdongtinhnguyen.000webhostapp.com/gettentruongtheomatruong.php?MAT1="+maTruong;
+                                getTenTruong(urlGetTenTruong);
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
