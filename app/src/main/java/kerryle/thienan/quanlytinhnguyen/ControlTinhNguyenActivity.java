@@ -4,7 +4,9 @@ import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.v4.widget.SearchViewCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -465,6 +467,13 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
 
         SearchView searchView = (SearchView) mnuSearch.getActionView();
 
+
+        if (mnuSearch != null) {
+            searchView = (SearchView) mnuSearch.getActionView();
+            if (searchView != null) {
+                SearchViewCompat.setInputType(searchView, InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_POSTAL_ADDRESS);
+            }
+        }
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
