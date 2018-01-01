@@ -1,9 +1,16 @@
 package kerryle.thienan.quanlytinhnguyen;
 
+import android.os.Build;
 import android.os.Bundle;
-import android.support.v7.app.ActionBar;
+import android.support.annotation.RequiresApi;
+import android.support.v4.widget.SearchViewCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.InputType;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.android.volley.Request;
@@ -35,8 +42,8 @@ public class DanhSachTruongActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_danh_sach_truong);
 
-        ActionBar actionBar =getSupportActionBar();
-        actionBar.hide();
+//        ActionBar actionBar =getSupportActionBar();
+//        actionBar.hide();
 
         addControls();
 
@@ -89,5 +96,38 @@ public class DanhSachTruongActivity extends AppCompatActivity {
                 }
         );
         requestQueue.add(jsonArrayRequest);
+    }
+    @RequiresApi(api = Build.VERSION_CODES.HONEYCOMB)
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_timkiem,menu);
+
+        MenuItem  mnuSearch = menu.findItem(R.id.mnuSearch);
+
+        SearchView searchView = (SearchView) mnuSearch.getActionView();
+
+
+        if (mnuSearch != null) {
+            searchView = (SearchView) mnuSearch.getActionView();
+            if (searchView != null) {
+                SearchViewCompat.setInputType(searchView, InputType.TYPE_CLASS_TEXT|InputType.TYPE_TEXT_VARIATION_POSTAL_ADDRESS);
+            }
+        }
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                adapterTruong.getFilter().filter(newText);
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
     }
 }

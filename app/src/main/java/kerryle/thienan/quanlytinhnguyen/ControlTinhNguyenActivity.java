@@ -500,6 +500,10 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
         {
             startActivity(new Intent(ControlTinhNguyenActivity.this , ThongTinUngDungActivity.class));
         }
+        else if (item.getItemId()==R.id.mnuDangXuat)
+        {
+            finish();
+        }
         return super.onOptionsItemSelected(item);
     }
 }

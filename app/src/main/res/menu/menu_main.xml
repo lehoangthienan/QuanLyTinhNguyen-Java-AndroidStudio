@@ -6,4 +6,7 @@
     <item android:id="@+id/mnuThongTinUngDung"
         android:title="Thông Tin Ứng Dụng"
         ></item>
+    <item android:id="@+id/mnuDangXuat"
+        android:title="Đăng Xuất"
+        ></item>
 </menu>

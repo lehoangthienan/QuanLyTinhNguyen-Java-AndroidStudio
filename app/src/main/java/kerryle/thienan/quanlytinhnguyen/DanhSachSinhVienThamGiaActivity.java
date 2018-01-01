@@ -77,7 +77,7 @@ public class DanhSachSinhVienThamGiaActivity extends AppCompatActivity {
                                 dsThongTinSinhVien.add(new ThongTinSinhVien(
                                         object.getString("MASV"),
                                         object.getString("TenSV"),
-                                        object.getString("TenTruong")
+                                        object.getString("MAT")
                                 ));
                             } catch (JSONException e) {
                                 e.printStackTrace();

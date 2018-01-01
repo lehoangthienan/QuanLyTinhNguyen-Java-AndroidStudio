@@ -9,9 +9,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Filter;
+import android.widget.Filterable;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import kerryle.thienan.quanlytinhnguyen.R;
@@ -22,10 +25,12 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.Truong;
  * Created by Thien An on 2017-12-29.
  */
 
-public class TruongAdapter extends BaseAdapter {
+public class TruongAdapter extends BaseAdapter  implements Filterable {
     private Activity context;
     private  int resource;
     private List<Truong> objects;
+
+    CustomFilter filter;
 
     public TruongAdapter(Activity context, int resource, List<Truong> objects) {
         this.context=context;
@@ -91,5 +96,50 @@ public class TruongAdapter extends BaseAdapter {
         Intent i = new Intent(context, XyLyXemTinhNguyenTruongActivity.class);
         i.putExtra("MAT" , mat);
         context.startActivity(i);
+    }
+    // Xử lý Menu tìm tiếm actionbar
+    @Override
+    public Filter getFilter() {
+        // TODO Auto-generated method stub
+        if(filter == null)
+        {
+            filter=new CustomFilter();
+        }
+        return filter;
+    }
+    //INNER CLASS
+    class CustomFilter extends Filter {
+        @Override
+        protected FilterResults performFiltering(CharSequence constraint) {
+            // TODO Auto-generated method stub
+            FilterResults results = new FilterResults();
+            if (constraint != null && constraint.length() > 0) {
+                //CONSTARINT TO UPPER
+                constraint = constraint.toString().toUpperCase();
+                ArrayList<Truong> filters = new ArrayList<Truong>();
+                //get specific items
+                for (int i = 0; i < objects.size(); i++) {
+                    if (objects.get(i).getMAT().toUpperCase().contains(constraint)) {
+                        Truong p = new Truong(
+                                objects.get(i).getMAT(),
+                                objects.get(i).getTenTruog());
+                        filters.add(p);
+                    }
+                }
+                results.count = filters.size();
+                results.values = filters;
+            } else {
+                results.count = objects.size();
+                results.values = objects;
+            }
+            return results;
+        }
+
+        @Override
+        protected void publishResults(CharSequence constraint, FilterResults results) {
+            // TODO Auto-generated method stub
+            objects=(ArrayList<Truong>) results.values;
+            notifyDataSetChanged();
+        }
     }
 }

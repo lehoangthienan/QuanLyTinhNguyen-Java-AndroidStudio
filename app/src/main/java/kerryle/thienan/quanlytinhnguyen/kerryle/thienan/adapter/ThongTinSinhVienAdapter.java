@@ -71,7 +71,7 @@ public class ThongTinSinhVienAdapter extends BaseAdapter {
 
         holder.txtMaSinhVienDSSV.setText("Mã Sinh Viên : "+ds.getMASV().toString());
         holder.txtTenSinhVienDSSV.setText("Tên Sinh Viên : " +ds.getTenSV().toString());
-        holder.txtTenTruongDSSV.setText("Trường : " +ds.getTenTruong().toString());
+        holder.txtTenTruongDSSV.setText("Trường : " +ds.getMAT().toString());
 
         return view;
 

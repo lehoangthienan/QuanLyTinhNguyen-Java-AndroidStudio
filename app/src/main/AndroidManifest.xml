@@ -60,6 +60,7 @@
             android:theme="@style/ThemeDanhSachSinhVien" />
         <activity
             android:name=".DanhSachTruongActivity"
+            android:label="Danh Sách Các Trường"
             android:theme="@style/ThemeAdmin" />
         <activity
             android:name=".ThongTinUngDungActivity"

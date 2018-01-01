@@ -7,13 +7,7 @@ package kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model;
 public class ThongTinSinhVien {
     private String MASV ;
     private String TenSV;
-    private String TenTruong;
-
-    public ThongTinSinhVien(String MASV, String tenSV, String tenTruong) {
-        this.MASV = MASV;
-        TenSV = tenSV;
-        TenTruong = tenTruong;
-    }
+    private String MAT;
 
     public void setMASV(String MASV) {
         this.MASV = MASV;
@@ -23,8 +17,14 @@ public class ThongTinSinhVien {
         TenSV = tenSV;
     }
 
-    public void setTenTruong(String tenTruong) {
-        TenTruong = tenTruong;
+    public void setMAT(String MAT) {
+        this.MAT = MAT;
+    }
+
+    public ThongTinSinhVien(String MASV, String tenSV, String MAT) {
+        this.MASV = MASV;
+        TenSV = tenSV;
+        this.MAT = MAT;
     }
 
     public String getMASV() {
@@ -35,7 +35,7 @@ public class ThongTinSinhVien {
         return TenSV;
     }
 
-    public String getTenTruong() {
-        return TenTruong;
+    public String getMAT() {
+        return MAT;
     }
 }
