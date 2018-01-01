@@ -23,6 +23,9 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.DanhSachUpdate;
  */
 
 public class DanhSachDeleteAdapter extends BaseAdapter {
+    //Kế thừa BaseAdapter
+    //Khởi Tạo Tham truyền vào Adapter
+
     private Activity context;
     private  int resource;
     private List<DanhSachUpdate> objects;
@@ -32,6 +35,8 @@ public class DanhSachDeleteAdapter extends BaseAdapter {
         this.resource=resource;
         this.objects=objects;
     }
+    // Khai báo những item có trong activity
+
     private  class ViewHolder{
         TextView txtMaTinhNguyenDelete ,txtTenTinhNguyenDelete ;
         ImageButton btnXoaTNDelete ;
@@ -59,10 +64,11 @@ public class DanhSachDeleteAdapter extends BaseAdapter {
 
             holder = new ViewHolder();
 
+            //khởi tạo LayoutInflater
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resource, null);
-            ;
 
+            //ánh xạ
             holder.txtMaTinhNguyenDelete = (TextView) view.findViewById(R.id.txtMaTNDelete);
             holder.txtTenTinhNguyenDelete = (TextView) view.findViewById(R.id.txtTenTNDelete);
             holder.btnXoaTNDelete = (ImageButton) view.findViewById(R.id.btnXoaTinhNguyenDelete);
@@ -73,6 +79,7 @@ public class DanhSachDeleteAdapter extends BaseAdapter {
         }
         final DanhSachUpdate ds = this.objects.get(position);
 
+        //gán dữ liệu vào textview
         holder.txtMaTinhNguyenDelete.setText("Mã: " + ds.getMATN().toString());
         holder.txtTenTinhNguyenDelete.setText("Tên: " + ds.getTenTN().toString());
 
@@ -86,6 +93,7 @@ public class DanhSachDeleteAdapter extends BaseAdapter {
 
         return view;
     }
+    //xử lý nhấn button sửa đồng thời đẩy dữ liệu qua XuLyDeleteActivity
     private void xuLySua(String matn) {
         Intent i = new Intent(context, XuLyDeleteActivity.class);
         i.putExtra("MATN" , matn);

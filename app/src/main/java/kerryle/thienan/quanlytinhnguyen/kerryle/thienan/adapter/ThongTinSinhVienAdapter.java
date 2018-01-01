@@ -20,6 +20,10 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.ThongTinSinhVien;
  */
 
 public class ThongTinSinhVienAdapter extends BaseAdapter {
+
+    //Kế thừa BaseAdapter để xử lý dữ liệu
+    //Khởi Tạo Tham truyền vào Adapter
+
     private Activity context;
     private  int resource;
     private List<ThongTinSinhVien> objects;
@@ -29,6 +33,7 @@ public class ThongTinSinhVienAdapter extends BaseAdapter {
         this.resource=resource;
         this.objects=objects;
     }
+    // Khai báo những item có trong activity
     private  class ViewHolder{
         TextView txtMaSinhVienDSSV ,txtTenSinhVienDSSV , txtTenTruongDSSV ;
     }
@@ -53,10 +58,11 @@ public class ThongTinSinhVienAdapter extends BaseAdapter {
         if (view == null) {
 
             holder = new ViewHolder();
-
+// khởi tạo LayoutInflater
             LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resource, null);;
 
+            //ánh xạ
             holder.txtMaSinhVienDSSV = (TextView) view.findViewById(R.id.txtMaSinhvienDSSV);
             holder.txtTenSinhVienDSSV = (TextView) view.findViewById(R.id.txtTenSinhVienDSSV);
             holder.txtTenTruongDSSV =(TextView) view.findViewById(R.id.txtTenTruongDSSV);

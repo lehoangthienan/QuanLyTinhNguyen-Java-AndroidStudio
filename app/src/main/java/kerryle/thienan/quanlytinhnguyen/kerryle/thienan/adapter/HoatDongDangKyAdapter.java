@@ -40,6 +40,8 @@ import static kerryle.thienan.quanlytinhnguyen.ControlTinhNguyenActivity.maSinhV
  */
 
 public class HoatDongDangKyAdapter extends BaseAdapter {
+    //Kế thừa BaseAdapter để xử lý dữ liệu
+    //Khởi Tạo Tham truyền vào Adapter
 
     private Activity context;
     private  int resource;
@@ -59,6 +61,7 @@ public class HoatDongDangKyAdapter extends BaseAdapter {
         this.resource=resource;
         this.objects=objects;
     }
+    // Khai báo những item có trong activity
     private  class ViewHolder{
         TextView txtTenTinhNguyenHDDK ,txtDiaDiemHDDK ,txtNgayGioBDHDDK , txtNgayKTHDDK   ;
         ImageButton btnHuyDangKyHDDK;
@@ -85,9 +88,12 @@ public class HoatDongDangKyAdapter extends BaseAdapter {
         ViewHolder holder ;
         if (view == null) {
             holder = new ViewHolder();
+
+            //khởi tạo LayoutInflater
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resource , null);
 
+            //ánh xạ
             holder.txtTenTinhNguyenHDDK =(TextView) view.findViewById(R.id.txtTenTinhNguyenHDDK);
             holder.txtDiaDiemHDDK =(TextView) view.findViewById(R.id.txtDiaDiemHDDK);
             holder.txtNgayGioBDHDDK =(TextView) view.findViewById(R.id.txtNgayBDHDDK);
@@ -103,12 +109,15 @@ public class HoatDongDangKyAdapter extends BaseAdapter {
         final HoatDongDangKy hoatDongDangKy = this.objects.get(i);
 
       //  MaTinhNguyen = hoatDongDangKy.getMATN().toString();
+
+        //gán
         holder.txtTenTinhNguyenHDDK.setText(hoatDongDangKy.getTenTN().toString());
         holder.txtDiaDiemHDDK.setText("Địa Điểm: "+hoatDongDangKy.getDiaDiem().toString());
         holder.txtNgayGioBDHDDK.setText("Ngày Bắt Đầu: "+hoatDongDangKy.getNgayGioBatDau().toString());
         holder.txtNgayKTHDDK.setText("Ngày Kết Thúc: "+hoatDongDangKy.getNgayGioKetThuc().toString());
 
 
+        //xử lý nhấn button hũy đăng ký , hũy đăng ký đồng thời thay đổi số lượng tham gia
         holder.btnHuyDangKyHDDK.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -126,6 +135,7 @@ public class HoatDongDangKyAdapter extends BaseAdapter {
 
         return  view;
     }
+    //xử lý giảm số lượng tham gia sau khi hũy đăng ký
     private void updateSoLuongThamGiaGiam(String url5, final String url3) {
         final RequestQueue requestQueue = Volley.newRequestQueue(context);
         final JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(
@@ -161,6 +171,7 @@ public class HoatDongDangKyAdapter extends BaseAdapter {
         requestQueue.add(jsonArrayRequest);
     }
 
+    //xử lý update số lượng tham gia
     private void updateSoLuongThamGia1(String url3) {
     RequestQueue requestQueue = Volley.newRequestQueue(context);
     StringRequest stringRequest = new StringRequest(Request.Method.POST,
@@ -196,6 +207,7 @@ public class HoatDongDangKyAdapter extends BaseAdapter {
     };
     requestQueue.add(stringRequest);
 }
+//xử lý hũy đăng kí
     private void xuLyHuyDangKy(String url) {
         RequestQueue requestQueue = Volley.newRequestQueue(context);
         StringRequest stringRequest = new StringRequest(Request.Method.POST,

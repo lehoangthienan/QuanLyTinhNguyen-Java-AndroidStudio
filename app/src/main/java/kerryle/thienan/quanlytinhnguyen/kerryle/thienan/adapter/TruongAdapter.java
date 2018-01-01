@@ -26,10 +26,15 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.Truong;
  */
 
 public class TruongAdapter extends BaseAdapter  implements Filterable {
+
+    //Kế thừa BaseAdapter để xử lý dữ liệu
+    //Khởi Tạo Tham truyền vào Adapter
+
     private Activity context;
     private  int resource;
     private List<Truong> objects;
 
+    // khởi tại CustomFilter để serachview vì trong BaseAdapter không có sẵn Filter nên phải implements Filterable và tạo hàm
     CustomFilter filter;
 
     public TruongAdapter(Activity context, int resource, List<Truong> objects) {
@@ -37,6 +42,7 @@ public class TruongAdapter extends BaseAdapter  implements Filterable {
         this.resource=resource;
         this.objects=objects;
     }
+    // khởi tạo item chức năng trong activity
     private  class ViewHolder{
         TextView txtMTDST ,txtTenDST  ;
         ImageButton btnDST;
@@ -66,6 +72,7 @@ public class TruongAdapter extends BaseAdapter  implements Filterable {
             LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resource, null);;
 
+            //ánh xạ
             holder.txtMTDST = (TextView) view.findViewById(R.id.txtMaTruongDST);
             holder.txtTenDST = (TextView) view.findViewById(R.id.txtTenTruongDST);
             holder.btnDST =(ImageButton) view.findViewById(R.id.btnXemDST);
@@ -81,6 +88,7 @@ public class TruongAdapter extends BaseAdapter  implements Filterable {
         holder.txtMTDST.setText("Mã Trường : "+ds.getMAT().toString());
         holder.txtTenDST.setText("Tên Trường : " +ds.getTenTruog().toString());
 
+        //xử lý sự kiển mở danh sách trường
         holder.btnDST.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,6 +100,7 @@ public class TruongAdapter extends BaseAdapter  implements Filterable {
 
     }
 
+    //xử lý mở danh sách tình nguyện chuyển qua xem chi tiết và chuyển mã trường qua
     private void xuLyMoDanhSachTinhNguyen(String mat) {
         Intent i = new Intent(context, XyLyXemTinhNguyenTruongActivity.class);
         i.putExtra("MAT" , mat);

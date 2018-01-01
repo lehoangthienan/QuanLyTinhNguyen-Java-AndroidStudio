@@ -19,6 +19,10 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.DangNhap;
 
 public class DangNhapAdapter extends BaseAdapter {
 
+    // kế thừa từ BaseAdapter để thao tác dữ liệu
+
+    //Khai báo tham số truyền vào Contructor
+
     private Activity context;
     private  int resource;
     private List<DangNhap> objects;
@@ -28,6 +32,7 @@ public class DangNhapAdapter extends BaseAdapter {
         this.resource=resource;
         this.objects=objects;
     }
+    //khai báo những item có trong activity
     private  class ViewHolder{
         TextView txtTenTk, txtMk , txtMASVDN;
     }
@@ -46,16 +51,22 @@ public class DangNhapAdapter extends BaseAdapter {
         return 0;
     }
 
+    //Hàm tùy biến và xử lý
     @Override
     public View getView(int position, View view, ViewGroup viewGroup) {
+
         ViewHolder holder;
+
         if (view == null) {
 
+            // Khởi tạo ViewHolder
             holder = new ViewHolder();
 
+            //khai báo LayoutInflater
             LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resource, null);;
 
+            // ánh xạ
             holder.txtTenTk = (TextView) view.findViewById(R.id.txtTenTK);
             holder.txtMk = (TextView) view.findViewById(R.id.txtMK);
             holder.txtMASVDN = (TextView) view.findViewById(R.id.txtMASVDN);
@@ -68,6 +79,7 @@ public class DangNhapAdapter extends BaseAdapter {
         }
         final DangNhap dangNhap = this.objects.get(position);
 
+        //gán dữ liệu
         holder.txtTenTk.setText(dangNhap.getTaiKhoan().toString());
         holder.txtMk.setText(dangNhap.getMatKhau().toString());
         holder.txtMASVDN.setText(dangNhap.getMASV().toString());

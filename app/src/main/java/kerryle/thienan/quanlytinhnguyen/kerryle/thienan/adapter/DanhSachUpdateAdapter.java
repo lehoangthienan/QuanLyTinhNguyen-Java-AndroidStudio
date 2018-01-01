@@ -23,6 +23,8 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.DanhSachUpdate;
  */
 
 public class DanhSachUpdateAdapter extends BaseAdapter {
+    //Kế thừa BaseAdapter
+    //Khởi Tạo Tham truyền vào Adapter
 
     private  Activity context;
     private  int resource;
@@ -33,6 +35,7 @@ public class DanhSachUpdateAdapter extends BaseAdapter {
         this.resource=resource;
         this.objects=objects;
     }
+    // Khai báo những item có trong activity
     private  class ViewHolder{
         TextView txtMaTinhNguyenDSUpdate ,txtTenTinhNguyenDSUpdate ;
         ImageButton btnUpdateTinhNguyen ;
@@ -60,9 +63,11 @@ public class DanhSachUpdateAdapter extends BaseAdapter {
 
             holder = new ViewHolder();
 
+            //khởi tạo LayoutInflater
             LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resource, null);;
 
+            //ánh xạ
             holder.txtMaTinhNguyenDSUpdate = (TextView) view.findViewById(R.id.txtMaTinhNguyenDSUpdate);
             holder.txtTenTinhNguyenDSUpdate = (TextView) view.findViewById(R.id.txtTenTinhNguyenDSUpdate);
             holder.btnUpdateTinhNguyen =(ImageButton) view.findViewById(R.id.btnUpdateTinhNguyen);
@@ -75,9 +80,11 @@ public class DanhSachUpdateAdapter extends BaseAdapter {
         }
         final DanhSachUpdate ds = this.objects.get(position);
 
+        //gán
         holder.txtMaTinhNguyenDSUpdate.setText("Mã: "+ds.getMATN().toString());
         holder.txtTenTinhNguyenDSUpdate.setText("Tên: " +ds.getTenTN().toString());
 
+        //xử lý nhấn button cập nhập tình nguyện
         holder.btnUpdateTinhNguyen.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -91,6 +98,7 @@ public class DanhSachUpdateAdapter extends BaseAdapter {
 
     }
 
+    //đẩy mã tình nguyện qua bên xử lý update tình nguyện show ra những thông tin chi tiết đựa trên MATN ứng với possiton của từng dòng layout
     private void xuLySua(String matn) {
         Intent i = new Intent(context, XuLyUpdateActivity.class);
         i.putExtra("MATN" , matn);

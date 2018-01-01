@@ -20,6 +20,9 @@ import kerryle.thienan.quanlytinhnguyen.kerryle.thienan.model.NguoiDung;
 
 public class NguoiDungAdapter extends BaseAdapter {
 
+    //Kế thừa BaseAdapter để xử lý dữ liệu
+    //Khởi Tạo Tham truyền vào Adapter
+
     private Activity context;
     private  int resource;
     //private List<NguoiDung> objects;
@@ -30,6 +33,7 @@ public class NguoiDungAdapter extends BaseAdapter {
         this.resource=resource;
         this.objects=objects;
     }
+    // Khai báo những item có trong activity
     private  class ViewHolder{
         TextView   txtHoTenCTND , txtNamSinhCTND ,txtMaSoSinhVienCTND , txtTenTruongCTND , txtMaTruongCTND  ;
         ImageButton btnThayDoiThongTinCaNhan, btnThayDoiMatKhau;
@@ -59,9 +63,11 @@ public class NguoiDungAdapter extends BaseAdapter {
 
             holder = new ViewHolder();
 
+            //khởi tạo LayoutInflater
             LayoutInflater inflater =(LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(resource, null);
 
+            //ánh xạ
             holder.txtHoTenCTND = (TextView) view.findViewById(R.id.txtHoTenCTND);
             holder.txtMaSoSinhVienCTND = (TextView) view.findViewById(R.id.txtMaSoSinhVienCTND);
             holder.txtNamSinhCTND = (TextView) view.findViewById(R.id.txtNamSinhCTND);
@@ -78,7 +84,7 @@ public class NguoiDungAdapter extends BaseAdapter {
         }
         final  NguoiDung nguoiDung = this.objects;
 
-
+        //gán
         holder.txtHoTenCTND.setText("Tên : "+nguoiDung.getTenSV().toString());
         holder.txtMaSoSinhVienCTND.setText("Mã Số Sinh Viên : " +nguoiDung.getMASV().toString());
         holder.txtMaTruongCTND.setText("Tên Trường : " +nguoiDung.getMAT().toString());
