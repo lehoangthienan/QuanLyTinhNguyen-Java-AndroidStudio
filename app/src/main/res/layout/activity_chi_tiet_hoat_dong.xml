@@ -11,7 +11,7 @@
     android:background="@drawable/anhnen3"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="kerryle.thienan.quanlytinhnguyen.ChiTietHoatDongActivity">
+    tools:context="bigc.uit.quanlytinhnguyen.ChiTietHoatDongActivity">
 
     <TextView
         android:id="@+id/txtTenTinhNguyenCT"

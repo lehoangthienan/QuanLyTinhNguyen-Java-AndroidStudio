@@ -5,7 +5,7 @@
     android:background="@drawable/anhnen"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="kerryle.thienan.quanlytinhnguyen.XuLyUpdateActivity">
+    tools:context="bigc.uit.quanlytinhnguyen.XuLyUpdateActivity">
 
     <ScrollView
         android:layout_width="380dp"

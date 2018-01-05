@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/anhnen"
     android:orientation="vertical"
-    tools:context="kerryle.thienan.quanlytinhnguyen.ThongTinUngDungActivity">
+    tools:context="bigc.uit.quanlytinhnguyen.ThongTinUngDungActivity">
 
     <TextView
         android:id="@+id/textView2"

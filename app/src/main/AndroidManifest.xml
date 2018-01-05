@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="kerryle.thienan.quanlytinhnguyen">
+    package="bigc.uit.quanlytinhnguyen">
 
     <uses-permission android:name="android.permission.READ_SMS" />
     <uses-permission android:name="android.permission.READ_CONTACTS" />
@@ -15,7 +15,7 @@
         android:roundIcon="@drawable/logodangnhap"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name="bigc.uit.quanlytinhnguyen.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,49 +23,49 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ControlTinhNguyenActivity"
+            android:name="bigc.uit.quanlytinhnguyen.ControlTinhNguyenActivity"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity
-            android:name=".DangKyActivity"
+            android:name="bigc.uit.quanlytinhnguyen.DangKyActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name=".ChiTietHoatDongActivity"
+            android:name="bigc.uit.quanlytinhnguyen.ChiTietHoatDongActivity"
             android:theme="@style/ThemeChiTiet" />
         <activity
-            android:name=".QuanLyAdminActivity"
+            android:name="bigc.uit.quanlytinhnguyen.QuanLyAdminActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name=".kerryle.thienan.ThayDoiMatKhau"
+            android:name="bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.ThayDoiMatKhau"
             android:theme="@style/ThemeThayDoiMatKhau" />
         <activity
-            android:name=".kerryle.thienan.ChinhSuaThongTinCaNhanActivity"
+            android:name="bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.ChinhSuaThongTinCaNhanActivity"
             android:theme="@style/ThemeChinhSuaThongTinCaNhan" />
         <activity
-            android:name=".InsertTinhNguyenActivity"
+            android:name="bigc.uit.quanlytinhnguyen.InsertTinhNguyenActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name=".DanhSachTinhNguyenUpdateActivity"
+            android:name="bigc.uit.quanlytinhnguyen.DanhSachTinhNguyenUpdateActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name=".XuLyUpdateActivity"
+            android:name="bigc.uit.quanlytinhnguyen.XuLyUpdateActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name=".DeleteTinhNguyenActivity"
+            android:name="bigc.uit.quanlytinhnguyen.DeleteTinhNguyenActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name=".XuLyDeleteActivity"
+            android:name="bigc.uit.quanlytinhnguyen.XuLyDeleteActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name=".DanhSachSinhVienThamGiaActivity"
+            android:name="bigc.uit.quanlytinhnguyen.DanhSachSinhVienThamGiaActivity"
             android:theme="@style/ThemeDanhSachSinhVien" />
         <activity
-            android:name=".DanhSachTruongActivity"
+            android:name="bigc.uit.quanlytinhnguyen.DanhSachTruongActivity"
             android:label="Danh Sách Các Trường"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name=".ThongTinUngDungActivity"
+            android:name="bigc.uit.quanlytinhnguyen.ThongTinUngDungActivity"
             android:theme="@style/ThemeAdmin" />
-        <activity android:name=".XyLyXemTinhNguyenTruongActivity"
+        <activity android:name="bigc.uit.quanlytinhnguyen.XyLyXemTinhNguyenTruongActivity"
             android:theme="@style/ThemeDanhSachSinhVien">
 
         </activity>

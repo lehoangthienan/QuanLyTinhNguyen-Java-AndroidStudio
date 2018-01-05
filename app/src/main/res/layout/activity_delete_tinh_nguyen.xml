@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/anhnen"
-    tools:context="kerryle.thienan.quanlytinhnguyen.DeleteTinhNguyenActivity">
+    tools:context="bigc.uit.quanlytinhnguyen.DeleteTinhNguyenActivity">
 
     <ListView
         android:id="@+id/lvDanhSachDelete"

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/anhnendanhsachsinhvien"
-    tools:context="kerryle.thienan.quanlytinhnguyen.DanhSachSinhVienThamGiaActivity">
+    tools:context="bigc.uit.quanlytinhnguyen.DanhSachSinhVienThamGiaActivity">
 
     <ListView
         android:id="@+id/lvDanhSachSinhVienTinhNguyen"

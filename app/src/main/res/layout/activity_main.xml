@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/anhnendangnhap"
-    tools:context="kerryle.thienan.quanlytinhnguyen.MainActivity">
+    tools:context="bigc.uit.quanlytinhnguyen.MainActivity">
 
     <TextView
         android:id="@+id/textView3"

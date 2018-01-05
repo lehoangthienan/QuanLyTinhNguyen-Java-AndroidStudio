@@ -6,7 +6,7 @@ android {
     aaptOptions.cruncherEnabled = false
     aaptOptions.useNewCruncher = false
     defaultConfig {
-        applicationId "kerryle.thienan.quanlytinhnguyen"
+        applicationId "bigc.uit.quanlytinhnguyen"
         minSdkVersion 19
         targetSdkVersion 26
         versionCode 1
