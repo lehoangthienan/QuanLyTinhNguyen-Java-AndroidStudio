@@ -8,8 +8,8 @@
     tools:context="bigc.uit.quanlytinhnguyen.InsertTinhNguyenActivity">
 
     <ScrollView
-        android:layout_width="380dp"
-        android:layout_height="540dp"
+        android:layout_width="410dp"
+        android:layout_height="604dp"
         android:layout_marginBottom="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginRight="1dp"
@@ -24,7 +24,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView12"
@@ -126,9 +126,9 @@
 
             <ImageButton
                 android:id="@+id/btnNgayBDInsert"
-                android:background="@drawable/drawimagebuttontime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawimagebuttontime"
                 app:srcCompat="@drawable/calendar" />
 
             <TextView
@@ -149,9 +149,9 @@
 
             <ImageButton
                 android:id="@+id/btnNgayKTInsert"
-                android:background="@drawable/drawimagebuttontime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawimagebuttontime"
                 app:srcCompat="@drawable/calendar" />
 
             <TextView
@@ -164,7 +164,7 @@
 
             <TextView
                 android:id="@+id/textView38"
-                android:layout_width="match_parent"
+                android:layout_width="409dp"
                 android:layout_height="wrap_content"
                 android:text="Số Lượng Tối Đa : "
                 android:textColor="@android:color/background_light"
@@ -228,9 +228,9 @@
 
             <ImageButton
                 android:id="@+id/btnThemInsert"
-                android:background="@drawable/drawimagebuttonadmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawimagebuttonadmin"
                 app:srcCompat="@drawable/new1" />
 
         </LinearLayout>

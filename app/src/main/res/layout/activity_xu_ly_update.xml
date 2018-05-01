@@ -8,8 +8,8 @@
     tools:context="bigc.uit.quanlytinhnguyen.XuLyUpdateActivity">
 
     <ScrollView
-        android:layout_width="380dp"
-        android:layout_height="540dp"
+        android:layout_width="407dp"
+        android:layout_height="601dp"
         android:layout_marginBottom="1dp"
         android:layout_marginLeft="1dp"
         android:layout_marginRight="1dp"
@@ -110,9 +110,9 @@
 
             <ImageButton
                 android:id="@+id/btnNgayBDUpdate"
-                android:background="@drawable/drawimagebuttontime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawimagebuttontime"
                 app:srcCompat="@drawable/calendar" />
 
             <TextView
@@ -133,9 +133,9 @@
 
             <ImageButton
                 android:id="@+id/btnNgayKTUpdate"
-                android:background="@drawable/drawimagebuttontime"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawimagebuttontime"
                 app:srcCompat="@drawable/calendar" />
 
             <TextView
@@ -212,9 +212,9 @@
 
             <ImageButton
                 android:id="@+id/btnCapNhapUpdate"
-                android:background="@drawable/drawimagebuttonadmin"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/drawimagebuttonadmin"
                 app:srcCompat="@drawable/capnhap" />
         </LinearLayout>
     </ScrollView>
