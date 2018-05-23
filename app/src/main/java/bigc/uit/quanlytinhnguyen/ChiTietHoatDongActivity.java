@@ -33,6 +33,7 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
+import bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.model.DiaDiem;
 import bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.model.SoLuongSinhVienToiDa;
 import bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.model.SoLuongThamGia;
 import bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.model.TenTruong;
@@ -43,10 +44,10 @@ import static bigc.uit.quanlytinhnguyen.ControlTinhNguyenActivity.maSinhVien;
 public class ChiTietHoatDongActivity extends AppCompatActivity {
 
     // khởi tạo
-    String MATN ;
+    String MATN;
 
-    ImageButton btnGoiCT , btnDangKyCT , btnHuyDKCT;
-    TextView txtTenTinhNguyenCT ,txtDiaDiemCT,txtNgayKTCT,txtNgayBDCT,txtSLMAXCT,txtSLMINCT,txtSLThamGiaCT,txtSDT,txtNoiDung , txtTenTruongDaiHocCT;
+    ImageButton btnGoiCT, btnDangKyCT, btnHuyDKCT , btnViTri;
+    TextView txtTenTinhNguyenCT, txtDiaDiemCT, txtNgayKTCT, txtNgayBDCT, txtSLMAXCT, txtSLMINCT, txtSLThamGiaCT, txtSDT, txtNoiDung, txtTenTruongDaiHocCT;
     ImageView imgHinhAnh;
 
     // khởi tạo các đường dẩn thao tác với MYSQL
@@ -54,19 +55,19 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
 
     String url1 = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/inserttinhnguyensinhvien.php";
 
-    String url2 ="http://quanlyhoatdongtinhnguyen.000webhostapp.com/deletetinhnguyensinhvien.php";
+    String url2 = "http://quanlyhoatdongtinhnguyen.000webhostapp.com/deletetinhnguyensinhvien.php";
 
-    String url3 ;
+    String url3;
 
-    String url4 , url5;
+    String url4, url5;
 
     String urlGetTenTruong;
 
     String LinkHinhAnh;
 
-    int soLuongMax=0 , soLuongThamGia=0 ,soLuongThamGia1=0;
-// khởi tạo boolean kiểm tra số lượng đã đạt MAX hay chưa
-    Boolean checkSLThamGia ;
+    int soLuongMax = 0, soLuongThamGia = 0, soLuongThamGia1 = 0;
+    // khởi tạo boolean kiểm tra số lượng đã đạt MAX hay chưa
+    Boolean checkSLThamGia;
     Boolean checkSLThamGia1;
 
     @Override
@@ -75,7 +76,7 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
         setContentView(R.layout.activity_chi_tiet_hoat_dong);
 
         // ẩn thanh ActionBar
-        ActionBar actionBar =getSupportActionBar();
+        ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
         // khởi tạo ánh xạ
@@ -97,7 +98,7 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
 //    <uses-permission android:name="android.permission.INTERNET" />
 
 
-                btnGoiCT.setOnClickListener(new View.OnClickListener() {
+        btnGoiCT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 xuLyQuaySo();
@@ -107,7 +108,7 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
         btnDangKyCT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateSoLuongThamGiaTang(url5 , url4 ,url3);
+                updateSoLuongThamGiaTang(url5, url4, url3);
                 xuLyDangKy(url1);
             }
         });
@@ -115,11 +116,22 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
         btnHuyDKCT.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                updateSoLuongThamGiaGiam(url5 ,url3 );
+                updateSoLuongThamGiaGiam(url5, url3);
                 xuLyHuyDangKy(url2);
             }
         });
 
+        btnViTri.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+               xuLyViTri();
+            }
+        });
+    }
+
+    private void xuLyViTri() {
+        Intent i = new Intent(ChiTietHoatDongActivity.this, DiaDiemActivity.class);
+        i.putExtra("MATN" , MATN);
+        this.startActivity(i);
     }
 
     private void updateSoLuongThamGia(String url3) {
@@ -142,14 +154,14 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
-                        Log.d("AAA" , "ERROR!\n"+error.toString());
+                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !", Toast.LENGTH_SHORT).show();
+                        Log.d("AAA", "ERROR!\n" + error.toString());
                     }
                 }
-        ){
+        ) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String ,String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
                 params.put("SLThamGia", String.valueOf(soLuongThamGia));
                 return params;
             }
@@ -157,6 +169,7 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
         };
         requestQueue.add(stringRequest);
     }
+
     private void updateSoLuongThamGia1(String url3) {
         RequestQueue requestQueue = Volley.newRequestQueue(this);
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
@@ -177,14 +190,14 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
-                        Log.d("AAA" , "ERROR!\n"+error.toString());
+                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !", Toast.LENGTH_SHORT).show();
+                        Log.d("AAA", "ERROR!\n" + error.toString());
                     }
                 }
-        ){
+        ) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String ,String> params = new HashMap<>();
+                Map<String, String> params = new HashMap<>();
                 params.put("SLThamGia", String.valueOf(soLuongThamGia1));
                 return params;
             }
@@ -200,30 +213,27 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        if(response.trim().equals("succes"))
-                        {
+                        if (response.trim().equals("succes")) {
 
-                                Toast.makeText(ChiTietHoatDongActivity.this, "Hũy Đăng Kí Thành Công !",Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            Toast.makeText(ChiTietHoatDongActivity.this, "Hũy Đăng Kí Thất Bại !",Toast.LENGTH_SHORT).show();
+                            Toast.makeText(ChiTietHoatDongActivity.this, "Hũy Đăng Kí Thành Công !", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(ChiTietHoatDongActivity.this, "Hũy Đăng Kí Thất Bại !", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
-                        Log.d("AAA" , "ERROR!\n"+error.toString());
+                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !", Toast.LENGTH_SHORT).show();
+                        Log.d("AAA", "ERROR!\n" + error.toString());
                     }
                 }
-        ){
+        ) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String ,String> params = new HashMap<>();
-                params.put("MATN",MATN.toString());
-                params.put("MASV" ,maSinhVien.toString());
+                Map<String, String> params = new HashMap<>();
+                params.put("MATN", MATN.toString());
+                params.put("MASV", maSinhVien.toString());
                 return params;
             }
 
@@ -239,29 +249,26 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        if(response.trim().equals("succes"))
-                        {
-                                Toast.makeText(ChiTietHoatDongActivity.this, "Đăng Kí Tham Gia Thành Công !",Toast.LENGTH_SHORT).show();
-                        }
-                        else
-                        {
-                            Toast.makeText(ChiTietHoatDongActivity.this, "Đăng Kí Tham Gia Thất Bại !",Toast.LENGTH_SHORT).show();
+                        if (response.trim().equals("succes")) {
+                            Toast.makeText(ChiTietHoatDongActivity.this, "Đăng Kí Tham Gia Thành Công !", Toast.LENGTH_SHORT).show();
+                        } else {
+                            Toast.makeText(ChiTietHoatDongActivity.this, "Đăng Kí Tham Gia Thất Bại !", Toast.LENGTH_SHORT).show();
                         }
                     }
                 },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !",Toast.LENGTH_SHORT).show();
-                        Log.d("AAA" , "ERROR!\n"+error.toString());
+                        Toast.makeText(ChiTietHoatDongActivity.this, "Xảy Ra Lỗi !", Toast.LENGTH_SHORT).show();
+                        Log.d("AAA", "ERROR!\n" + error.toString());
                     }
                 }
-        ){
+        ) {
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                Map<String ,String> params = new HashMap<>();
-                params.put("MATN",MATN.toString());
-                params.put("MASV" ,maSinhVien.toString());
+                Map<String, String> params = new HashMap<>();
+                params.put("MATN", MATN.toString());
+                params.put("MASV", maSinhVien.toString());
                 return params;
             }
 
@@ -269,10 +276,13 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
         requestQueue.add(stringRequest);
     }
 
-//xử lý quay số .
+    //xử lý quay số .
     private void xuLyQuaySo() {
         Uri uri = Uri.parse("tel:" + txtSDT.getText().toString());
         Intent intent = new Intent(Intent.ACTION_CALL);
+
+        // mở ứng dụng gọi mặc định của máy
+        intent.setData(uri);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -283,8 +293,6 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
             // for ActivityCompat#requestPermissions for more details.
             return;
         }
-        // mở ứng dụng gọi mặc định của máy
-        intent.setData(uri);
         startActivity(intent);
     }
 
@@ -293,9 +301,10 @@ public class ChiTietHoatDongActivity extends AppCompatActivity {
         Intent intent = getIntent();
         MATN = intent.getStringExtra("MATN");
 
-        btnGoiCT  = (ImageButton) findViewById( R.id.btnGoiCT);
-        btnDangKyCT  = (ImageButton) findViewById( R.id.btnDangKyCT);
-        btnHuyDKCT  = (ImageButton) findViewById( R.id.btnHuyDKCT);
+        btnGoiCT  = (ImageButton) findViewById(R.id.btnGoiCT);
+        btnDangKyCT  = (ImageButton) findViewById(R.id.btnDangKyCT);
+        btnHuyDKCT  = (ImageButton) findViewById(R.id.btnHuyDKCT);
+        btnViTri  = (ImageButton) findViewById(R.id.btnViTri);
 
         txtTenTinhNguyenCT = (TextView) findViewById(R.id.txtTenTinhNguyenCT);
         txtDiaDiemCT = (TextView) findViewById(R.id.txtDiaDiemCT);

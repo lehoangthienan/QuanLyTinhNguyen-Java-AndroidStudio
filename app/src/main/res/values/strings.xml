@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">QuanLyTinhNguyen</string>
+    <string name="title_activity_maps">Map</string>
+    <string-array name="arrType">
+        <item>MAP TYPE NORMAL</item>
+        <item>MAP TYPE SATELLITE</item>
+        <item>MAP TYPE TERRAIN</item>
+        <item>MAP TYPE HYBRID</item>
+        <item>MAP TYPE NONE</item>
+    </string-array>
 </resources>

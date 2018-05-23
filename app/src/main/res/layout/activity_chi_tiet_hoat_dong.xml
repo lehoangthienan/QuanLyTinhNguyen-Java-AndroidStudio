@@ -160,16 +160,16 @@
     <ImageButton
         android:id="@+id/btnGoiCT"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/drawimagebuttoncall"
+        android:layout_height="48dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="10dp"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/drawimagebuttondangky"
+        app:layout_constraintHorizontal_bias="0.86"
         app:layout_constraintLeft_toRightOf="@+id/txtSDT"
         app:layout_constraintRight_toRightOf="parent"
-        app:srcCompat="@drawable/phone"
-        android:layout_marginTop="43dp"
-        app:layout_constraintTop_toBottomOf="@+id/txtTenTinhNguyenCT" />
+        app:layout_constraintTop_toBottomOf="@+id/txtTenTinhNguyenCT"
+        app:srcCompat="@drawable/phone" />
 
     <TextView
         android:id="@+id/txtSDT"
@@ -213,14 +213,14 @@
 
     <ScrollView
         android:layout_width="0dp"
-        android:layout_height="120dp"
+        android:layout_height="232dp"
         android:layout_marginBottom="60dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginTop="8dp"
         app:layout_constraintTop_toBottomOf="@+id/txtSDT"
         app:layout_constraintVertical_bias="0.0">
 
@@ -231,5 +231,17 @@
             android:hint="Hiển Thị Nội Dung "
             android:textColor="@android:color/background_dark" />
     </ScrollView>
+
+    <ImageButton
+        android:id="@+id/btnViTri"
+        android:layout_width="128dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/drawimagebuttondangky"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.918"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnGoiCT"
+        app:srcCompat="@drawable/vitri" />
 
 </android.support.constraint.ConstraintLayout>

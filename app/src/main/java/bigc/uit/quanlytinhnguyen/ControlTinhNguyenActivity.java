@@ -521,10 +521,10 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
         {
             startActivity(new Intent(ControlTinhNguyenActivity.this , DanhSachTruongActivity.class));
         }
-//        else if (item.getItemId()==R.id.mnuThongTinUngDung)
-//        {
-//            startActivity(new Intent(ControlTinhNguyenActivity.this , ThongTinUngDungActivity.class));
-//        }
+        else if (item.getItemId()==R.id.mnuThongTinUngDung)
+        {
+            startActivity(new Intent(ControlTinhNguyenActivity.this , ThongTinUngDungActivity.class));
+       }
         else if (item.getItemId()==R.id.mnuDangXuat)
         {
             finish();

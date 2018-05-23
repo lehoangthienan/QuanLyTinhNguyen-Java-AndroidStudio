@@ -8,6 +8,13 @@
     <uses-permission android:name="android.permission.CALL_PHONE" />
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logodangnhap"
@@ -15,7 +22,7 @@
         android:roundIcon="@drawable/logodangnhap"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name="bigc.uit.quanlytinhnguyen.MainActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -23,52 +30,73 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.ControlTinhNguyenActivity"
+            android:name=".ControlTinhNguyenActivity"
             android:theme="@style/Theme.AppCompat.Light" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.DangKyActivity"
+            android:name=".DangKyActivity"
             android:theme="@style/AppTheme" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.ChiTietHoatDongActivity"
+            android:name=".ChiTietHoatDongActivity"
             android:theme="@style/ThemeChiTiet" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.QuanLyAdminActivity"
+            android:name=".QuanLyAdminActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.ThayDoiMatKhau"
+            android:name=".bigc.hoatdongtinhnguyen.ThayDoiMatKhau"
             android:theme="@style/ThemeThayDoiMatKhau" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.ChinhSuaThongTinCaNhanActivity"
+            android:name=".bigc.hoatdongtinhnguyen.ChinhSuaThongTinCaNhanActivity"
             android:theme="@style/ThemeChinhSuaThongTinCaNhan" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.InsertTinhNguyenActivity"
+            android:name=".InsertTinhNguyenActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.DanhSachTinhNguyenUpdateActivity"
+            android:name=".DanhSachTinhNguyenUpdateActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.XuLyUpdateActivity"
+            android:name=".XuLyUpdateActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.DeleteTinhNguyenActivity"
+            android:name=".DeleteTinhNguyenActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.XuLyDeleteActivity"
+            android:name=".XuLyDeleteActivity"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.DanhSachSinhVienThamGiaActivity"
+            android:name=".DanhSachSinhVienThamGiaActivity"
             android:theme="@style/ThemeDanhSachSinhVien" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.DanhSachTruongActivity"
+            android:name=".DanhSachTruongActivity"
             android:label="Danh Sách Các Trường"
             android:theme="@style/ThemeAdmin" />
         <activity
-            android:name="bigc.uit.quanlytinhnguyen.ThongTinUngDungActivity"
+            android:name=".ThongTinUngDungActivity"
             android:theme="@style/ThemeAdmin" />
-        <activity android:name="bigc.uit.quanlytinhnguyen.XyLyXemTinhNguyenTruongActivity"
-            android:theme="@style/ThemeDanhSachSinhVien">
+        <activity
+            android:name=".XyLyXemTinhNguyenTruongActivity"
+            android:theme="@style/ThemeDanhSachSinhVien" />
+        <activity
+            android:name=".DiaDiemActivity"
+            android:theme="@style/ThemeChiTiet" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/. 
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
 
-        </activity>
+        <activity
+            android:name=".MapsActivity"
+            android:label="@string/title_activity_maps" />
+        <activity android:name=".WeatherActivity"
+            android:theme="@style/ThemeThoiTiet" >
+         </activity>
+
     </application>
 
 </manifest>
