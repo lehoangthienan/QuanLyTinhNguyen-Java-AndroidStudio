@@ -9,6 +9,6 @@
     <padding android:bottom="10dp" android:left="10dp" android:right="10dp" android:top="10dp">
     </padding>
     <!-- và đây là bán kính đường tròn ở 4 góc -->
-    <corners android:radius="400dp">
+    <corners android:radius="10dp">
     </corners>
 </shape>
