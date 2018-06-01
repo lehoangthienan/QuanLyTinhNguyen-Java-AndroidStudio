@@ -4,6 +4,7 @@ package bigc.uit.quanlytinhnguyen.bigc.hoatdongtinhnguyen.adapter;
  * Created by Thien An on 2017-12-11.
  */
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
@@ -13,10 +14,13 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.Filter;
 import android.widget.Filterable;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -96,6 +100,7 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
     private  class ViewHolder{
         TextView txtTenTinhNguyen ,txtSLThamGia ,txtNgayBD , txtNgayKT ,txtSLConLai , txtTenTruongDaiHoc  ;
         ImageButton btnChiTiet, btnDangKyNhanh ,btnDanhSachSinhVienTham ;
+        ImageView imgAnimeDS;
 
     }
 
@@ -138,7 +143,9 @@ public class TinhNguyenAdapter  extends BaseAdapter implements Filterable {
             holder.btnDangKyNhanh =(ImageButton) view.findViewById(R.id.btnDangKyNhanh);
             holder.txtTenTruongDaiHoc =(TextView) view.findViewById(R.id.txtTenTruongDaiHoc);
             holder.btnDanhSachSinhVienTham =(ImageButton) view.findViewById(R.id.btnDanhSachSinhVienTham);
-
+            holder.imgAnimeDS = view.findViewById(R.id.imgAnimeDS);
+            @SuppressLint("ResourceType") Animation animationRotale = AnimationUtils.loadAnimation(context, R.animator.animeds);
+            holder.imgAnimeDS.startAnimation(animationRotale);
             // chuổi MYSQL
             urlGetMa= "http://quanlyhoatdongtinhnguyen.000webhostapp.com/gettinhnguyensinhvien.php?MASV="+maSinhVien;
             //xử lý get Mã Tình Nguyện

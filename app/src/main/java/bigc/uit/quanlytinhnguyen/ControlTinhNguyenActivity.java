@@ -1,5 +1,8 @@
 package bigc.uit.quanlytinhnguyen;
 
+import android.animation.AnimatorInflater;
+import android.animation.AnimatorSet;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -11,7 +14,10 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TabHost;
@@ -48,7 +54,7 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
     // khởi tạo adapter
     // khởi tạo danh sách
     ListView lvDanhSachTinhNguyen, lvDanhSachTinhNguyenDaDangKy , lvChiTietNguoiDung;
-
+    ImageView imgAnimeDS ;
     ArrayList<TinhNguyen> dsTinhNguyen;
     TinhNguyenAdapter adapterTinhNguyen;
 
@@ -226,6 +232,14 @@ public class ControlTinhNguyenActivity extends AppCompatActivity {
         btnThayDoiMatKhau = (ImageButton) findViewById(R.id.btnThayDoiMatKhau);
         txtMaTruongCTND= (TextView) findViewById(R.id.txtMaTruongCTND);
 
+        //set anime image view trong danh sach tinh nguyen
+//        setContentView(R.layout.danhsachtinhnguyen);
+//        imgAnimeDS = findViewById(R.id.imgAnimeDS);
+//        @SuppressLint("ResourceType") Animation animationRotale = AnimationUtils.loadAnimation(this, R.animator.animeds);
+//        imgAnimeDS.startAnimation(animationRotale);
+//        AnimatorSet set = (AnimatorSet) AnimatorInflater.loadAnimator(this, R.animator.animeds);
+//        set.setTarget(imgAnime); // set the view you want to animate
+//        set.start();
        // btnChiTiet = (Button) findViewById(R.id.btnChiTiet);
 
         // khởi tạo TabHost

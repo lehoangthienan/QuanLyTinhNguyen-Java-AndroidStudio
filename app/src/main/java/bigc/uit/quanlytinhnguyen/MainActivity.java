@@ -7,6 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
     boolean checkNhapSai = false;
     String x = "admin";
     String y = "admin";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -145,6 +147,7 @@ public class MainActivity extends AppCompatActivity {
         dsDangNhap = new ArrayList<>();
 
         getData(urlGetDaTa);
+
     }
     // get dữ liệu đăng nhập để so sách
     private void getData(String url) {
