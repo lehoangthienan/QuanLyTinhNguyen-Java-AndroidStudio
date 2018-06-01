@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "1088527929643",
+    "firebase_url": "https://quanlytinhnguyen.firebaseio.com",
+    "project_id": "quanlytinhnguyen",
+    "storage_bucket": "quanlytinhnguyen.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1088527929643:android:5a7b96b213beff93",
+        "android_client_info": {
+          "package_name": "bigc.uit.quanlytinhnguyen"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1088527929643-8hragt9nctablaapph1n04e11e1s8th1.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "1088527929643-8hragt9nctablaapph1n04e11e1s8th1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqVtH98PDdrJgy2S0ESzrAzNHOjcDRt8U"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
